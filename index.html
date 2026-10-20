@@ -3,38 +3,53 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>R0YCE Marketing — Paid Media Scaling &amp; AI UGC Content</title>
-<meta name="description" content="R0YCE Marketing scales ecommerce and DTC brands with performance paid media and AI-powered UGC content. Book a free strategy call." />
+<title>R0YCE Marketing — Paid Media &amp; AI UGC Content for Coaches and Digital Product Sellers</title>
+<meta name="description" content="R0YCE Marketing helps coaches and digital product sellers scale with Meta, TikTok and YouTube Ads, AI UGC creative, landing pages and conversion tracking. Book a free strategy call." />
 
-<script src="https://cdn.tailwindcss.com"></script>
+<!-- ============================================================
+     META PIXEL — single installation, fires once per page load.
+     To test: add &r0yce_test=1 to the URL (it logs every event to console).
+     ============================================================ -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2156638741957885');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2156638741957885&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
     theme: {
       extend: {
-        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] },
         colors: {
-          ink:   { 950: '#05070d', 900: '#0a0d16', 800: '#111524', 700: '#1b2136', 600: '#2a3250' },
-          lime:  { 400: '#c6ff4f', 500: '#b4f02e', 600: '#96cc17' },
-          violet:{ 400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed' },
+          /* neutral, paper-like palette */
+          paper:  '#ffffff',
+          mist:   '#f6f7f9',
+          line:   '#e5e7eb',
+          ink:    { 900: '#111418', 800: '#1f2429', 700: '#384049', 600: '#5b6470', 500: '#7c8591', 400: '#9aa2ac' },
+          accent: { 50: '#eef3f8', 100: '#dde7f1', 200: '#b9cde0', 300: '#8dabc6', 400: '#5c7f9c', 500: '#3d5f7c', 600: '#2e4a62', 700: '#22374a' },
         },
         boxShadow: {
-          glow: '0 0 60px -15px rgba(198,255,79,0.45)',
-          card: '0 20px 60px -25px rgba(0,0,0,0.85)',
+          soft: '0 1px 2px rgba(16,24,40,.04), 0 8px 24px -12px rgba(16,24,40,.12)',
+          lift: '0 2px 4px rgba(16,24,40,.05), 0 18px 40px -20px rgba(16,24,40,.22)',
         },
-        keyframes: {
-          marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
-          floaty:  { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
-          pulseRing: { '0%': { transform: 'scale(0.9)', opacity: '0.7' }, '100%': { transform: 'scale(1.6)', opacity: '0' } },
-        },
-        animation: {
-          marquee: 'marquee 32s linear infinite',
-          floaty: 'floaty 6s ease-in-out infinite',
-          pulseRing: 'pulseRing 2.4s ease-out infinite',
-        },
+        maxWidth: { '8xl': '84rem' },
       },
     },
   };
@@ -42,1108 +57,763 @@
 
 <style>
   html { -webkit-font-smoothing: antialiased; }
-  body { background-color: #05070d; }
-  ::selection { background: #c6ff4f; color: #05070d; }
+  ::selection { background: #dde7f1; color: #111418; }
 
-  /* gradient text */
-  .grad-text {
-    background: linear-gradient(100deg, #c6ff4f 0%, #a78bfa 55%, #c6ff4f 100%);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
+  .card { transition: box-shadow .28s ease, border-color .28s ease, transform .28s ease; }
+  .card:hover { box-shadow: 0 2px 4px rgba(16,24,40,.05), 0 18px 40px -20px rgba(16,24,40,.22); transform: translateY(-2px); }
 
-  /* aurora backdrop */
-  .aurora::before {
-    content: ''; position: absolute; inset: -30% -10% auto -10%; height: 620px;
-    background:
-      radial-gradient(45% 55% at 20% 30%, rgba(198,255,79,0.16), transparent 70%),
-      radial-gradient(45% 55% at 78% 20%, rgba(139,92,246,0.20), transparent 70%);
-    filter: blur(20px); pointer-events: none;
-  }
-  .grid-lines {
-    background-image:
-      linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px);
-    background-size: 64px 64px;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
-  }
-  .card-hover { transition: transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s, box-shadow .35s; }
-  .card-hover:hover { transform: translateY(-6px); border-color: rgba(198,255,79,0.35); box-shadow: 0 24px 70px -30px rgba(198,255,79,0.35); }
-
-  /* marquee track */
-  .marquee-track { display: flex; width: max-content; animation: marquee 32s linear infinite; }
-  .marquee:hover .marquee-track { animation-play-state: paused; }
-
-  /* scroll reveal */
-  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+  /* quiet scroll reveal */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
   .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
 
-  /* animated counters handled in JS */
   details > summary { list-style: none; cursor: pointer; }
   details > summary::-webkit-details-marker { display: none; }
   details[open] .chev { transform: rotate(180deg); }
-  .chev { transition: transform .3s ease; }
+  .chev { transition: transform .25s ease; }
 
-  input, select, textarea { color-scheme: dark; }
-  input:focus, select:focus, textarea:focus { outline: none; border-color: #c6ff4f; box-shadow: 0 0 0 3px rgba(198,255,79,0.18); }
+  input:focus, select:focus, textarea:focus {
+    outline: none; border-color: #3d5f7c; box-shadow: 0 0 0 3px rgba(61,95,124,.14);
+  }
+  .fade-in { animation: fadeIn .5s ease both; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 </style>
 </head>
 
-<body class="font-sans text-slate-300 antialiased overflow-x-hidden">
+<body class="bg-paper font-sans text-ink-700 antialiased">
 
 <!-- ============ NAV ============ -->
-<header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
-  <div class="mx-auto max-w-7xl px-5 lg:px-8">
-    <div id="navInner" class="mt-4 flex items-center justify-between rounded-2xl border border-white/5 bg-ink-900/60 px-4 py-3 backdrop-blur-xl transition-all duration-300">
-      <a href="#top" class="flex items-center gap-2.5 group">
-        <span class="relative grid h-9 w-9 place-items-center rounded-xl bg-lime-400 text-ink-950 font-black text-lg shadow-glow">
-          R
-          <span class="absolute inset-0 rounded-xl bg-lime-400/60 animate-pulseRing"></span>
-        </span>
-        <span class="text-white font-extrabold tracking-tight text-[17px]">R0YCE<span class="text-lime-400">.</span></span>
+<header class="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
+  <div class="mx-auto flex max-w-8xl items-center justify-between px-5 py-3.5 lg:px-8">
+    <a href="#top" class="flex items-center gap-2.5">
+      <span class="grid h-9 w-9 place-items-center rounded-lg bg-ink-900 text-[15px] font-bold text-white">R</span>
+      <span class="text-[17px] font-bold tracking-tight text-ink-900">R0YCE<span class="text-accent-500">.</span></span>
+    </a>
+
+    <nav class="hidden items-center gap-1 text-sm lg:flex">
+      <a href="#services" class="rounded-md px-3 py-2 text-ink-600 hover:bg-mist hover:text-ink-900">Services</a>
+      <a href="#work"     class="rounded-md px-3 py-2 text-ink-600 hover:bg-mist hover:text-ink-900">Our work</a>
+      <a href="#process"  class="rounded-md px-3 py-2 text-ink-600 hover:bg-mist hover:text-ink-900">How it works</a>
+      <a href="#pricing"  class="rounded-md px-3 py-2 text-ink-600 hover:bg-mist hover:text-ink-900">Pricing</a>
+      <a href="#faq"      class="rounded-md px-3 py-2 text-ink-600 hover:bg-mist hover:text-ink-900">FAQ</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a href="#book" class="cta hidden items-center gap-2 rounded-lg bg-ink-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-ink-800 sm:inline-flex">
+        Book a Strategy Call
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-
-      <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
-        <a href="#services" class="rounded-lg px-3.5 py-2 text-slate-300 hover:text-white hover:bg-white/5 transition">Services</a>
-        <a href="#results"  class="rounded-lg px-3.5 py-2 text-slate-300 hover:text-white hover:bg-white/5 transition">Results</a>
-        <a href="#process"  class="rounded-lg px-3.5 py-2 text-slate-300 hover:text-white hover:bg-white/5 transition">Process</a>
-        <a href="#pricing"  class="rounded-lg px-3.5 py-2 text-slate-300 hover:text-white hover:bg-white/5 transition">Pricing</a>
-        <a href="#faq"      class="rounded-lg px-3.5 py-2 text-slate-300 hover:text-white hover:bg-white/5 transition">FAQ</a>
-      </nav>
-
-      <div class="flex items-center gap-2">
-        <a href="#book" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-lime-400 px-4 py-2.5 text-sm font-bold text-ink-950 hover:bg-lime-500 transition shadow-glow">
-          Book a call
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <button id="menuBtn" aria-label="Menu" class="lg:hidden grid h-10 w-10 place-items-center rounded-xl border border-white/10 text-white">
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
-      </div>
+      <button id="menuBtn" aria-label="Open menu" class="grid h-10 w-10 place-items-center rounded-lg border border-line text-ink-800 lg:hidden">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
+  </div>
 
-    <div id="mobileMenu" class="hidden lg:hidden mt-2 rounded-2xl border border-white/10 bg-ink-900/95 p-2 backdrop-blur-xl">
-      <a href="#services" class="block rounded-xl px-4 py-3 text-slate-200 hover:bg-white/5">Services</a>
-      <a href="#results"  class="block rounded-xl px-4 py-3 text-slate-200 hover:bg-white/5">Results</a>
-      <a href="#process"  class="block rounded-xl px-4 py-3 text-slate-200 hover:bg-white/5">Process</a>
-      <a href="#pricing"  class="block rounded-xl px-4 py-3 text-slate-200 hover:bg-white/5">Pricing</a>
-      <a href="#faq"      class="block rounded-xl px-4 py-3 text-slate-200 hover:bg-white/5">FAQ</a>
-      <a href="#book"     class="mt-1 block rounded-xl bg-lime-400 px-4 py-3 text-center font-bold text-ink-950">Book a call</a>
-    </div>
+  <div id="mobileMenu" class="hidden border-t border-line bg-paper px-5 pb-4 lg:hidden">
+    <a href="#services" class="block rounded-md px-2 py-3 text-ink-700 hover:bg-mist">Services</a>
+    <a href="#work"     class="block rounded-md px-2 py-3 text-ink-700 hover:bg-mist">Our work</a>
+    <a href="#process"  class="block rounded-md px-2 py-3 text-ink-700 hover:bg-mist">How it works</a>
+    <a href="#pricing"  class="block rounded-md px-2 py-3 text-ink-700 hover:bg-mist">Pricing</a>
+    <a href="#faq"      class="block rounded-md px-2 py-3 text-ink-700 hover:bg-mist">FAQ</a>
+    <a href="#book" class="cta mt-2 block rounded-lg bg-ink-900 px-4 py-3 text-center font-semibold text-white">Book a Strategy Call</a>
   </div>
 </header>
 
 <main id="top">
 
 <!-- ============ HERO ============ -->
-<section class="relative aurora overflow-hidden pt-36 pb-20 lg:pt-44 lg:pb-28">
-  <div class="absolute inset-0 grid-lines"></div>
-  <div class="relative mx-auto max-w-7xl px-5 lg:px-8">
-    <div class="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+<section class="border-b border-line bg-mist">
+  <div class="mx-auto grid max-w-8xl items-center gap-12 px-5 py-16 lg:grid-cols-[1.05fr_.95fr] lg:gap-16 lg:px-8 lg:py-24">
 
-      <div>
-        <div class="reveal inline-flex items-center gap-2 rounded-full border border-lime-400/25 bg-lime-400/10 px-3.5 py-1.5 text-xs font-semibold text-lime-400">
-          <span class="relative flex h-2 w-2">
-            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime-400 opacity-75"></span>
-            <span class="relative inline-flex h-2 w-2 rounded-full bg-lime-400"></span>
-          </span>
-          3 client slots open for this quarter
-        </div>
+    <div>
+      <p class="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1.5 text-xs font-medium text-ink-600">
+        <span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
+        Taking on 3 new clients this quarter
+      </p>
 
-        <h1 class="reveal mt-6 text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[62px]">
-          We scale brands with
-          <span class="grad-text">paid media</span>
-          and
-          <span class="relative inline-block">
-            AI UGC
-            <svg class="absolute -bottom-2 left-0 w-full text-lime-400/70" height="10" viewBox="0 0 200 10" fill="none" preserveAspectRatio="none"><path d="M2 7c40-5 90-6 196-3" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
-          </span>
-          that actually converts.
-        </h1>
+      <h1 class="mt-6 text-[2rem] font-bold leading-[1.15] tracking-tight text-ink-900 sm:text-4xl lg:text-[2.9rem]">
+        Turn ad spend into booked calls — with paid media that scales and AI creative that keeps up.
+      </h1>
 
-        <p class="reveal mt-7 max-w-xl text-lg leading-relaxed text-slate-400">
-          R0YCE Marketing is a performance studio for DTC and ecommerce teams. We buy media profitably,
-          produce endless AI-generated UGC creative, and compound the two until your ROAS stops being a
-          guessing game.
-        </p>
+      <p class="mt-5 max-w-xl text-[17px] leading-relaxed text-ink-600">
+        R0YCE Marketing works with coaches, course creators and digital product sellers. We run your
+        Meta, TikTok and YouTube Ads, produce the UGC-style creative they need, and fix the pages and
+        tracking between the click and the sale — so more of your budget turns into qualified leads.
+      </p>
 
-        <div class="reveal mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <a href="#book" class="group inline-flex items-center justify-center gap-2 rounded-2xl bg-lime-400 px-7 py-4 text-base font-bold text-ink-950 shadow-glow transition hover:bg-lime-500">
-            Book your free strategy call
-            <svg class="h-5 w-5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a href="#results" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/12 bg-white/5 px-7 py-4 text-base font-semibold text-white backdrop-blur transition hover:bg-white/10">
-            <svg class="h-5 w-5 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6h-6"/></svg>
-            See the numbers
-          </a>
-        </div>
-
-        <p class="reveal mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-500">
-          <svg class="h-4 w-4 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          No retainers for the first 30 days if we miss the agreed KPI.
-        </p>
-
-        <dl class="reveal mt-12 grid grid-cols-3 gap-6 border-t border-white/8 pt-8">
-          <div>
-            <dd class="text-3xl font-black text-white lg:text-4xl">$<span class="counter" data-to="42" data-suffix="M+">0</span></dd>
-            <dt class="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">Ad spend managed</dt>
-          </div>
-          <div>
-            <dd class="text-3xl font-black text-white lg:text-4xl"><span class="counter" data-to="4" data-decimals="1" data-suffix=".2x">0</span></dd>
-            <dt class="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">Avg. blended ROAS</dt>
-          </div>
-          <div>
-            <dd class="text-3xl font-black text-white lg:text-4xl"><span class="counter" data-to="180" data-suffix="+">0</span></dd>
-            <dt class="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">Brands scaled</dt>
-          </div>
-        </dl>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a href="#book" class="cta inline-flex items-center justify-center gap-2 rounded-lg bg-ink-900 px-6 py-3.5 text-[15px] font-semibold text-white shadow-soft transition hover:bg-ink-800">
+          Book a Strategy Call
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#services" class="inline-flex items-center justify-center gap-2 rounded-lg border border-line bg-paper px-6 py-3.5 text-[15px] font-semibold text-ink-800 transition hover:border-ink-400">
+          See what we do
+        </a>
       </div>
 
-      <!-- Hero visual: live-ish dashboard card -->
-      <div class="reveal relative">
-        <div class="absolute -inset-6 rounded-[36px] bg-gradient-to-tr from-lime-400/15 via-violet-500/15 to-transparent blur-2xl"></div>
+      <p class="mt-4 flex items-center gap-2 text-sm text-ink-500">
+        <svg class="h-4 w-4 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        30-minute call · free account review · no obligation
+      </p>
 
-        <div class="relative rounded-3xl border border-white/10 bg-ink-900/80 p-5 shadow-card backdrop-blur-xl animate-floaty">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <span class="h-2.5 w-2.5 rounded-full bg-red-400/70"></span>
-              <span class="h-2.5 w-2.5 rounded-full bg-amber-400/70"></span>
-              <span class="h-2.5 w-2.5 rounded-full bg-lime-400/80"></span>
-            </div>
-            <span class="rounded-full border border-lime-400/25 bg-lime-400/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-lime-400">Live account</span>
-          </div>
+      <dl class="mt-10 grid grid-cols-3 gap-4 border-t border-line pt-7">
+        <div>
+          <dt class="text-xs font-medium uppercase tracking-wide text-ink-500">Ad platforms</dt>
+          <dd class="mt-1 text-sm font-semibold text-ink-900">Meta · TikTok · YouTube</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-medium uppercase tracking-wide text-ink-500">Creative output</dt>
+          <dd class="mt-1 text-sm font-semibold text-ink-900">Up to 60 assets / mo</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-medium uppercase tracking-wide text-ink-500">First batch live</dt>
+          <dd class="mt-1 text-sm font-semibold text-ink-900">Within week one</dd>
+        </div>
+      </dl>
+    </div>
 
-          <div class="mt-5 grid grid-cols-2 gap-3">
-            <div class="rounded-2xl border border-white/8 bg-ink-800/70 p-4">
-              <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">ROAS</p>
-              <p class="mt-1 text-2xl font-black text-white">5.8x</p>
-              <p class="mt-1 text-[11px] font-semibold text-lime-400">▲ 112% vs. prior agency</p>
-            </div>
-            <div class="rounded-2xl border border-white/8 bg-ink-800/70 p-4">
-              <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">CPA</p>
-              <p class="mt-1 text-2xl font-black text-white">$18.40</p>
-              <p class="mt-1 text-[11px] font-semibold text-lime-400">▼ 43% in 60 days</p>
-            </div>
-          </div>
-
-          <!-- SVG chart -->
-          <div class="mt-4 rounded-2xl border border-white/8 bg-ink-800/70 p-4">
-            <div class="flex items-center justify-between">
-              <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Revenue · last 90 days</p>
-              <p class="text-[11px] font-bold text-lime-400">+268%</p>
-            </div>
-            <svg viewBox="0 0 320 110" class="mt-3 h-28 w-full" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#c6ff4f" stop-opacity="0.45"/>
-                  <stop offset="100%" stop-color="#c6ff4f" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <path d="M0 96 L32 88 L64 90 L96 74 L128 78 L160 58 L192 62 L224 40 L256 30 L288 20 L320 8 L320 110 L0 110 Z" fill="url(#areaFill)"/>
-              <path id="chartLine" d="M0 96 L32 88 L64 90 L96 74 L128 78 L160 58 L192 62 L224 40 L256 30 L288 20 L320 8"
-                    fill="none" stroke="#c6ff4f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <div class="mt-1 flex justify-between text-[10px] font-medium text-slate-600">
-              <span>Day 1</span><span>Day 30</span><span>Day 60</span><span>Day 90</span>
-            </div>
-          </div>
-
-          <div class="mt-4 space-y-2.5">
-            <div class="flex items-center gap-3 rounded-xl border border-white/8 bg-ink-800/70 p-3">
-              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-violet-500/20 text-violet-400">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
-              </span>
-              <div class="min-w-0">
-                <p class="truncate text-xs font-semibold text-white">AI UGC batch #24 shipped</p>
-                <p class="text-[11px] text-slate-500">18 hooks · 6 angles · ready for Meta + TikTok Ads</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-3 rounded-xl border border-white/8 bg-ink-800/70 p-3">
-              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-lime-400/15 text-lime-400">
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-              </span>
-              <div class="min-w-0">
-                <p class="truncate text-xs font-semibold text-white">Winner found: "POV" hook</p>
-                <p class="text-[11px] text-slate-500">Scaled to 4 ad sets · 3.1x CTR lift</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- live creative previews -->
-          <div class="mt-4 grid grid-cols-2 gap-3">
-            <div class="group/vid relative overflow-hidden rounded-xl border border-white/10 bg-black">
-              <video class="h-40 w-full object-cover" src="assets/ugc-video-1.mp4" muted loop playsinline preload="metadata" poster="assets/ai-product-shoot.jpg"></video>
-              <span class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></span>
-              <span class="pointer-events-none absolute bottom-2 left-2 rounded-md bg-black/60 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-lime-400 backdrop-blur">UGC · 9:16</span>
-            </div>
-            <div class="group/vid relative overflow-hidden rounded-xl border border-white/10 bg-black">
-              <video class="h-40 w-full object-cover" src="assets/ugc-video-2.mp4" muted loop playsinline preload="metadata" poster="assets/ai-product-visual.jpg"></video>
-              <span class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></span>
-              <span class="pointer-events-none absolute bottom-2 left-2 rounded-md bg-black/60 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-lime-400 backdrop-blur">AI product</span>
-            </div>
-          </div>
+    <!-- hero visual: clean browser frame + real work -->
+    <div class="lg:pl-4">
+      <div class="overflow-hidden rounded-xl border border-line bg-paper shadow-lift">
+        <div class="flex items-center gap-2 border-b border-line bg-mist px-4 py-2.5">
+          <span class="h-2 w-2 rounded-full bg-ink-400/50"></span>
+          <span class="h-2 w-2 rounded-full bg-ink-400/30"></span>
+          <span class="h-2 w-2 rounded-full bg-ink-400/20"></span>
+          <span class="ml-2 truncate rounded-md border border-line bg-paper px-2 py-0.5 text-[11px] text-ink-500">roycemarketing.com</span>
         </div>
 
-        <!-- floating badge -->
-        <div class="absolute -left-4 bottom-10 hidden rounded-2xl border border-white/10 bg-ink-900/90 px-4 py-3 shadow-card backdrop-blur-xl sm:block">
-          <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Creative velocity</p>
-          <p class="text-lg font-black text-white">60+ assets<span class="text-slate-500 font-semibold text-sm">/mo</span></p>
+        <div class="grid grid-cols-2 gap-2 p-2">
+          <figure class="relative overflow-hidden rounded-lg bg-ink-900">
+            <video class="h-52 w-full object-cover sm:h-64" src="assets/ugc-video-1.mp4" muted loop playsinline preload="metadata"></video>
+            <span class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8 text-[11px] font-medium text-white">AI UGC · 9:16</span>
+          </figure>
+          <figure class="relative overflow-hidden rounded-lg bg-ink-900">
+            <video class="h-52 w-full object-cover sm:h-64" src="assets/ugc-video-2.mp4" muted loop playsinline preload="metadata"></video>
+            <span class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8 text-[11px] font-medium text-white">AI product motion · 9:16</span>
+          </figure>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 px-2 pb-2">
+          <figure class="overflow-hidden rounded-lg border border-line">
+            <img src="assets/ai-product-shoot.jpg" alt="Nine AI-generated product photography scenes for one conditioner product" loading="lazy" class="h-28 w-full object-cover object-top sm:h-32">
+          </figure>
+          <figure class="overflow-hidden rounded-lg border border-line">
+            <img src="assets/ai-product-visual.jpg" alt="AI-generated beverage product key visual with liquid splash" loading="lazy" class="h-28 w-full object-cover object-center sm:h-32">
+          </figure>
+        </div>
+
+        <div class="flex items-center justify-between border-t border-line px-4 py-3">
+          <p class="text-[11px] text-ink-500">A sample of the creative formats we produce</p>
+          <a href="#work" class="text-[11px] font-semibold text-accent-600 hover:underline">See more →</a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ============ LOGO MARQUEE ============ -->
-<section class="border-y border-white/8 bg-ink-900/40 py-8">
-  <p class="mb-6 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">Trusted by growth teams at</p>
-  <div class="marquee relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_12%,#000_88%,transparent)]">
-    <div class="marquee-track gap-14 pr-14">
-      <!-- duplicated set for seamless loop -->
-      <span class="whitespace-nowrap text-xl font-black tracking-tight text-slate-500">NORTHBOUND</span>
-      <span class="whitespace-nowrap text-xl font-black tracking-tight text-slate-500">VELA<span class="text-slate-600">SKIN</span></span>
-      <span class="whitespace-nowrap text-xl font-black tracking-tight text-slate-500">Halo&amp;Co</span>
-      <span class="whitespace-nowrap text-xl font-black tracking-tight text-slate-500">PEAKFORM</span>
-      <span class="whitespace-nowrap text-xl font-black tracking-tight text-slate-500">Lumen<span class="text-slate-600">Labs</span></span>
-      <span class="whitespace-nowrap text-xl font-black tracking-tight text-slate-500">TERRA GOODS</span>
-      <span class="whitespace-nowrap text-xl font-black tracking-tight text-slate-500">Bloomé</span>
-      <span class="whitespace-nowrap text-xl font-black tracking-tight text-slate-500">IRONCLAD</span>
-      <span class="whitespace-nowrap text-xl font-black tracking-tight text-slate-500">NORTHBOUND</span>
-      <span class="whitespace-nowrap text-xl font-black tracking-tight text-slate-500">VELA<span class="text-slate-600">SKIN</span></span>
-      <span class="whitespace-nowrap text-xl font-black tracking-tight text-slate-500">Halo&amp;Co</span>
-      <span class="whitespace-nowrap text-xl font-black tracking-tight text-slate-500">PEAKFORM</span>
-      <span class="whitespace-nowrap text-xl font-black tracking-tight text-slate-500">Lumen<span class="text-slate-600">Labs</span></span>
-      <span class="whitespace-nowrap text-xl font-black tracking-tight text-slate-500">TERRA GOODS</span>
-      <span class="whitespace-nowrap text-xl font-black tracking-tight text-slate-500">Bloomé</span>
-      <span class="whitespace-nowrap text-xl font-black tracking-tight text-slate-500">IRONCLAD</span>
+<!-- ============ WHO THIS IS FOR / PROBLEM ============ -->
+<section class="border-b border-line bg-paper">
+  <div class="mx-auto grid max-w-8xl gap-12 px-5 py-16 lg:grid-cols-[.95fr_1.05fr] lg:items-start lg:px-8 lg:py-20">
+    <div class="reveal">
+      <p class="text-xs font-semibold uppercase tracking-wider text-accent-600">Who we help</p>
+      <h2 class="mt-3 text-2xl font-bold tracking-tight text-ink-900 sm:text-3xl lg:text-[2.15rem] lg:leading-tight">
+        Coaches and digital product sellers with a working offer — and no reliable way to scale it.
+      </h2>
+      <p class="mt-5 text-[16px] leading-relaxed text-ink-600">
+        You have something people already buy. What's missing is a predictable acquisition engine:
+        creative that doesn't run out, campaigns that get looked at daily, and a page and tracking
+        setup that turns interested people into bookings.
+      </p>
+      <p class="mt-4 text-[16px] leading-relaxed text-ink-600">
+        We're a small team that runs those four things together, so nothing is lost between the
+        creative shop and the media buyer.
+      </p>
+      <a href="#book" class="cta mt-7 inline-flex items-center gap-2 rounded-lg border border-line bg-paper px-5 py-3 text-sm font-semibold text-ink-800 transition hover:border-ink-400">
+        Get a Growth Plan
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
-  </div>
-</section>
 
-<!-- ============ PROBLEM ============ -->
-<section class="relative py-24 lg:py-28">
-  <div class="mx-auto max-w-7xl px-5 lg:px-8">
-    <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-      <div class="reveal">
-        <span class="text-xs font-bold uppercase tracking-[0.2em] text-lime-400">The real problem</span>
-        <h2 class="mt-4 text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-[42px]">
-          Most brands don't have an ads problem. They have a <span class="text-lime-400">creative volume</span> problem.
-        </h2>
-        <p class="mt-6 text-lg leading-relaxed text-slate-400">
-          Ad platforms have never been better at finding buyers — and never faster at killing your creative.
-          A winning ad used to last a quarter. Now it fatigues in two weeks. Agencies that still ship
-          four static concepts a month are structurally unable to keep up.
-        </p>
-        <p class="mt-5 text-lg leading-relaxed text-slate-400">
-          R0YCE pairs a media buying team with an always-on AI UGC engine, so testing never stops and
-          winners get scaled the day they're found — not at the next monthly review.
-        </p>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div class="reveal rounded-xl border border-line bg-paper p-5">
+        <h3 class="text-[15px] font-semibold text-ink-900">Creative runs out</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink-600">A winning ad fatigues within weeks. If new hooks stop arriving, spend stalls.</p>
       </div>
-
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div class="reveal card-hover rounded-2xl border border-white/8 bg-ink-900/60 p-6">
-          <span class="grid h-11 w-11 place-items-center rounded-xl bg-red-400/10 text-red-400">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01M10.3 3.9L2.4 18a2 2 0 001.7 3h15.8a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>
-          </span>
-          <h3 class="mt-4 font-bold text-white">Creative fatigue kills scaling</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-400">Frequency climbs, CPMs rise, and yesterday's winner becomes today's money pit. Without fresh hooks, budgets stall.</p>
-        </div>
-        <div class="reveal card-hover rounded-2xl border border-white/8 bg-ink-900/60 p-6">
-          <span class="grid h-11 w-11 place-items-center rounded-xl bg-amber-400/10 text-amber-400">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          </span>
-          <h3 class="mt-4 font-bold text-white">Slow iteration, slow growth</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-400">Monthly creative drops mean months of learning. The teams winning test weekly and scale daily.</p>
-        </div>
-        <div class="reveal card-hover rounded-2xl border border-white/8 bg-ink-900/60 p-6">
-          <span class="grid h-11 w-11 place-items-center rounded-xl bg-violet-400/10 text-violet-400">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
-          </span>
-          <h3 class="mt-4 font-bold text-white">Agency reports, no accountability</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-400">Dashboards full of impressions, zero conversation about contribution margin. We report on profit, not vanity.</p>
-        </div>
-        <div class="reveal card-hover rounded-2xl border border-white/8 bg-ink-900/60 p-6">
-          <span class="grid h-11 w-11 place-items-center rounded-xl bg-lime-400/10 text-lime-400">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21.4 8 14 2 9.4h7.6z"/></svg>
-          </span>
-          <h3 class="mt-4 font-bold text-white">UGC that looks like UGC</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-400">Polished studio ads get scrolled past. Our AI pipeline produces native-feeling creator content at scale.</p>
-        </div>
+      <div class="reveal rounded-xl border border-line bg-paper p-5">
+        <h3 class="text-[15px] font-semibold text-ink-900">Slow feedback loop</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink-600">Monthly creative drops mean monthly learning. The decision you need today waits.</p>
+      </div>
+      <div class="reveal rounded-xl border border-line bg-paper p-5">
+        <h3 class="text-[15px] font-semibold text-ink-900">Reports, not answers</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink-600">Impressions and CTR can all look fine while cost per booked call quietly climbs.</p>
+      </div>
+      <div class="reveal rounded-xl border border-line bg-paper p-5">
+        <h3 class="text-[15px] font-semibold text-ink-900">Untracked funnel</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink-600">No pixel, no conversion events, no clean handoff — you can't tell what's working.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ SERVICES ============ -->
-<section id="services" class="relative border-y border-white/8 bg-ink-900/40 py-24 lg:py-28">
-  <div class="mx-auto max-w-7xl px-5 lg:px-8">
-    <div class="reveal mx-auto max-w-3xl text-center">
-      <span class="text-xs font-bold uppercase tracking-[0.2em] text-lime-400">What we do</span>
-      <h2 class="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-[42px]">Two engines, one growth machine.</h2>
-      <p class="mt-5 text-lg text-slate-400">Media buying finds the demand. AI UGC feeds it endlessly. We run both, so nothing gets lost in the handoff between a creative shop and a media agency.</p>
+<section id="services" class="border-b border-line bg-mist">
+  <div class="mx-auto max-w-8xl px-5 py-16 lg:px-8 lg:py-20">
+    <div class="reveal max-w-2xl">
+      <p class="text-xs font-semibold uppercase tracking-wider text-accent-600">Services</p>
+      <h2 class="mt-3 text-2xl font-bold tracking-tight text-ink-900 sm:text-3xl lg:text-[2.15rem]">Four services, run as one funnel.</h2>
+      <p class="mt-4 text-[16px] leading-relaxed text-ink-600">Each one works on its own. Together they remove the gaps where leads normally get lost.</p>
     </div>
 
-    <div class="mt-14 grid gap-6 lg:grid-cols-2">
-
-      <!-- Paid media -->
-      <article class="reveal card-hover group relative overflow-hidden rounded-3xl border border-white/10 bg-ink-950/60 p-8">
-        <div class="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-lime-400/10 blur-3xl transition-opacity group-hover:opacity-160"></div>
-        <div class="relative">
-          <div class="flex items-center gap-3">
-            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-lime-400 text-ink-950">
-              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>
-            </span>
-            <div>
-              <h3 class="text-xl font-bold text-white">Paid Media Scaling</h3>
-               <p class="text-sm text-slate-500">Meta Ads · TikTok Ads · YouTube Ads</p>
-            </div>
-          </div>
-          <p class="mt-5 leading-relaxed text-slate-400">
-            Full-funnel media buying across <b class="text-white">Meta Ads, TikTok Ads, and YouTube Ads</b> — built around contribution margin. We build the account structure,
-            own the testing calendar, and scale winners aggressively while protecting CAC.
-          </p>
-          <ul class="mt-6 space-y-3 text-sm">
-            <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300"><b class="text-white">Account architecture</b> — consolidated campaigns, clean naming, signal-first structure.</span></li>
-            <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300"><b class="text-white">Creative testing system</b> — weekly structured tests with statistical reads.</span></li>
-            <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300"><b class="text-white">Scaling playbooks</b> — vertical, horizontal, and geo expansion with kill criteria.</span></li>
-            <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300"><b class="text-white">Measurement &amp; attribution</b> — server-side tracking, blended MER, cohort LTV.</span></li>
-          </ul>
-
-          <!-- proof: dashboard screenshot -->
-          <figure class="mt-7 overflow-hidden rounded-2xl border border-white/10 bg-ink-900">
-            <img src="assets/dashboard.jpg" alt="R0YCE client growth dashboard showing revenue, active users and conversion rate" loading="lazy" class="h-52 w-full object-cover object-top transition-transform duration-700 hover:scale-[1.04]">
-            <figcaption class="flex items-center justify-between gap-3 border-t border-white/8 px-4 py-3">
-              <span class="text-[11px] font-semibold text-slate-400">Live revenue dashboard · client account</span>
-              <span class="rounded-md bg-lime-400/10 px-2 py-0.5 text-[10px] font-bold text-lime-400">+12.4% MoM</span>
-            </figcaption>
-          </figure>
-        </div>
-      </article>
-
-      <!-- AI UGC -->
-      <article class="reveal card-hover group relative overflow-hidden rounded-3xl border border-white/10 bg-ink-950/60 p-8">
-        <div class="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-violet-500/15 blur-3xl"></div>
-        <div class="relative">
-          <div class="flex items-center gap-3">
-            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-violet-500 text-white">
-              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="14" height="14" rx="3"/><path d="M16 10l6-3.5v11L16 14z"/></svg>
-            </span>
-            <div>
-              <h3 class="text-xl font-bold text-white">UGC AI Content Creation</h3>
-              <p class="text-sm text-slate-500">Hooks · Creators · Variants · Locales</p>
-            </div>
-          </div>
-          <p class="mt-5 leading-relaxed text-slate-400">
-            An always-on creative factory. We script hooks, generate native-feeling AI creator content,
-            and edit it for the platform it will run on — then hand you a batch ready to launch.
-          </p>
-          <ul class="mt-6 space-y-3 text-sm">
-            <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300"><b class="text-white">Hook engineering</b> — 15–30 scroll-stopping openers mapped to real buyer objections.</span></li>
-            <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300"><b class="text-white">AI creator avatars</b> — consistent faces, voices, and delivery across every asset.</span></li>
-            <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300"><b class="text-white">Platform-native edits</b> — 9:16, 4:5, 1:1 cutdowns with captions and native pacing.</span></li>
-            <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300"><b class="text-white">AI product visuals</b> — studio-grade product shots and lifestyle scenes, no shoot day.</span></li>
-            <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300"><b class="text-white">Iteration on winners</b> — winning concepts re-cut into dozens of new variants.</span></li>
-          </ul>
-
-          <!-- proof: AI product shoot grid -->
-          <figure class="mt-7 overflow-hidden rounded-2xl border border-white/10 bg-ink-900">
-            <img src="assets/ai-product-shoot.jpg" alt="AI-generated product photography set for a tea tree oil conditioner, nine scenes" loading="lazy" class="h-52 w-full object-cover object-top transition-transform duration-700 hover:scale-[1.04]">
-            <figcaption class="flex items-center justify-between gap-3 border-t border-white/8 px-4 py-3">
-              <span class="text-[11px] font-semibold text-slate-400">1 product · 9 AI scenes · zero shoot days</span>
-              <span class="rounded-md bg-violet-500/15 px-2 py-0.5 text-[10px] font-bold text-violet-300">AI creative</span>
-            </figcaption>
-          </figure>
-        </div>
-      </article>
-    </div>
-
-    <!-- secondary services -->
-    <div class="mt-6 grid gap-6 sm:grid-cols-3">
-      <div class="reveal card-hover rounded-2xl border border-white/8 bg-ink-950/50 p-6">
-        <h4 class="font-bold text-white">Landing page &amp; CRO</h4>
-        <p class="mt-2 text-sm leading-relaxed text-slate-400">We fix the page your traffic lands on, because a 30% CVR lift beats a 30% budget cut.</p>
+    <!-- 01 Paid advertising -->
+    <div class="reveal mt-10 grid items-center gap-8 rounded-2xl border border-line bg-paper p-5 sm:p-7 lg:grid-cols-[1.05fr_.95fr] lg:gap-12">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-ink-500">01 · Paid advertising</p>
+        <h3 class="mt-2 text-xl font-bold text-ink-900 sm:text-2xl">Meta, TikTok &amp; YouTube Ads</h3>
+        <p class="mt-3 text-[15px] leading-relaxed text-ink-600">
+          Full-funnel campaign management across Meta Ads, TikTok Ads and YouTube Ads. We build the
+          account structure, set the testing calendar, and decide weekly what gets more budget and
+          what gets switched off.
+        </p>
+        <ul class="mt-5 space-y-2.5 text-[15px] text-ink-700">
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Account structure and campaign build-out</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Structured creative testing, with a written read each week</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Budget scaling with clear kill criteria</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Reporting on cost per lead and booked call, not just ROAS</li>
+        </ul>
+        <a href="#book" class="cta mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent-600 hover:underline">Talk through your account →</a>
       </div>
-      <div class="reveal card-hover rounded-2xl border border-white/8 bg-ink-950/50 p-6">
-        <h4 class="font-bold text-white">Email &amp; SMS flows</h4>
-        <p class="mt-2 text-sm leading-relaxed text-slate-400">Retention revenue that raises blended MER and lets you spend more on acquisition.</p>
-      </div>
-      <div class="reveal card-hover rounded-2xl border border-white/8 bg-ink-950/50 p-6">
-        <h4 class="font-bold text-white">Growth analytics</h4>
-        <p class="mt-2 text-sm leading-relaxed text-slate-400">One dashboard tying spend, revenue, and margin together — updated daily, no fluff.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ VALUE PROPS ============ -->
-<section class="py-24 lg:py-28">
-  <div class="mx-auto max-w-7xl px-5 lg:px-8">
-    <div class="reveal mx-auto max-w-3xl text-center">
-      <span class="text-xs font-bold uppercase tracking-[0.2em] text-lime-400">Why R0YCE</span>
-      <h2 class="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-[42px]">Built to be measured, not admired.</h2>
-    </div>
-
-    <div class="mt-14 grid gap-6 md:grid-cols-3">
-      <div class="reveal card-hover rounded-3xl border border-white/8 bg-gradient-to-b from-ink-900/80 to-ink-950/40 p-8">
-        <span class="grid h-12 w-12 place-items-center rounded-2xl border border-lime-400/25 bg-lime-400/10 text-lime-400">
-          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
-        </span>
-        <h3 class="mt-5 text-lg font-bold text-white">Faster than an in-house team</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-400">First creative batch lands in week one. First meaningful optimisation decision inside 14 days. No three-month onboarding theatre.</p>
-      </div>
-      <div class="reveal card-hover rounded-3xl border border-white/8 bg-gradient-to-b from-ink-900/80 to-ink-950/40 p-8">
-        <span class="grid h-12 w-12 place-items-center rounded-2xl border border-lime-400/25 bg-lime-400/10 text-lime-400">
-          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/><path d="M9 12l2 2 4-4"/></svg>
-        </span>
-        <h3 class="mt-5 text-lg font-bold text-white">KPI-backed, not hours-backed</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-400">We agree the target before we start — target CAC, MER, or revenue. Miss it in month one and the retainer is on us.</p>
-      </div>
-      <div class="reveal card-hover rounded-3xl border border-white/8 bg-gradient-to-b from-ink-900/80 to-ink-950/40 p-8">
-        <span class="grid h-12 w-12 place-items-center rounded-2xl border border-lime-400/25 bg-lime-400/10 text-lime-400">
-          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
-        </span>
-        <h3 class="mt-5 text-lg font-bold text-white">You own everything</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-400">Ad accounts, pixels, creative files, and dashboards stay yours. No hostage assets, no lock-in clauses, cancel with 30 days' notice.</p>
-      </div>
-    </div>
-
-    <!-- comparison -->
-    <div class="reveal mt-16 overflow-hidden rounded-3xl border border-white/10 bg-ink-900/50">
-      <div class="grid grid-cols-3 border-b border-white/8 bg-ink-950/60 px-6 py-4 text-xs font-bold uppercase tracking-wider">
-        <span class="text-slate-500">What you get</span>
-        <span class="text-slate-500">Typical agency</span>
-        <span class="text-lime-400">R0YCE</span>
-      </div>
-      <div class="divide-y divide-white/6 text-sm">
-        <div class="grid grid-cols-3 items-center gap-4 px-6 py-4">
-          <span class="font-medium text-white">New creative per month</span>
-          <span class="text-slate-500">4–8 statics</span>
-          <span class="font-semibold text-lime-400">40–60 video assets</span>
-        </div>
-        <div class="grid grid-cols-3 items-center gap-4 px-6 py-4">
-          <span class="font-medium text-white">Testing cadence</span>
-          <span class="text-slate-500">Monthly review</span>
-          <span class="font-semibold text-lime-400">Weekly tests, daily reads</span>
-        </div>
-        <div class="grid grid-cols-3 items-center gap-4 px-6 py-4">
-          <span class="font-medium text-white">Reporting on</span>
-          <span class="text-slate-500">Impressions &amp; CTR</span>
-          <span class="font-semibold text-lime-400">Blended MER &amp; margin</span>
-        </div>
-        <div class="grid grid-cols-3 items-center gap-4 px-6 py-4">
-          <span class="font-medium text-white">Communication</span>
-          <span class="text-slate-500">Email thread</span>
-          <span class="font-semibold text-lime-400">Shared Slack channel</span>
-        </div>
-        <div class="grid grid-cols-3 items-center gap-4 px-6 py-4">
-          <span class="font-medium text-white">Accountability</span>
-          <span class="text-slate-500">Best effort</span>
-          <span class="font-semibold text-lime-400">KPI guarantee</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CASE STUDIES ============ -->
-<section id="results" class="relative border-y border-white/8 bg-ink-900/40 py-24 lg:py-28">
-  <div class="mx-auto max-w-7xl px-5 lg:px-8">
-    <div class="reveal mx-auto max-w-3xl text-center">
-      <span class="text-xs font-bold uppercase tracking-[0.2em] text-lime-400">Case studies</span>
-      <h2 class="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-[42px]">Numbers we can stand behind.</h2>
-        <p class="mt-5 text-lg text-slate-400">Selected results from the last 18 months. Real dashboards, blended across paid and organic unless noted.</p>
-    </div>
-
-    <div class="mt-14 grid gap-6 lg:grid-cols-3">
-
-      <article class="reveal card-hover flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-950/60">
-        <div class="relative aspect-[4/3] overflow-hidden bg-ink-900">
-          <img src="assets/tiktok-analytics.jpg" alt="TikTok analytics showing 43M post views and 6.8M likes in 41 days" loading="lazy" class="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-105">
-          <span class="absolute left-3 top-3 rounded-full bg-black/70 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-lime-400 backdrop-blur">TikTok · Organic</span>
-        </div>
-        <div class="flex flex-1 flex-col p-7">
-          <span class="w-fit rounded-full border border-lime-400/25 bg-lime-400/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-lime-400">Viral AI content</span>
-          <h3 class="mt-5 text-lg font-bold text-white">43M views in 41 days</h3>
-          <p class="mt-2 text-sm text-slate-400">An AI UGC content sprint that broke the algorithm: 43M post views, 6.8M likes, 1M comments and 824K shares — then retargeted into paid.</p>
-          <dl class="mt-auto grid grid-cols-2 gap-4 border-t border-white/8 pt-6">
-            <div><dd class="text-2xl font-black text-lime-400">43M</dd><dt class="text-xs text-slate-500">Post views</dt></div>
-            <div><dd class="text-2xl font-black text-white">+482%</dd><dt class="text-xs text-slate-500">Growth in 41 days</dt></div>
-          </dl>
-        </div>
-      </article>
-
-      <article class="reveal card-hover flex flex-col rounded-3xl border border-white/10 bg-ink-950/60 p-7">
-        <span class="w-fit rounded-full border border-lime-400/25 bg-lime-400/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-lime-400">Skincare · DTC</span>
-        <h3 class="mt-5 text-lg font-bold text-white">VelaSkin</h3>
-        <p class="mt-2 text-sm text-slate-400">Stuck at $60k/mo with creative fatigue after two weeks. We rebuilt the testing system and shipped 52 AI UGC assets in month one.</p>
-        <dl class="mt-6 grid grid-cols-2 gap-4 border-t border-white/8 pt-6">
-          <div><dd class="text-2xl font-black text-lime-400">4.9x</dd><dt class="text-xs text-slate-500">Blended ROAS</dt></div>
-          <div><dd class="text-2xl font-black text-white">+312%</dd><dt class="text-xs text-slate-500">Monthly revenue</dt></div>
-        </dl>
-        <p class="mt-5 text-xs leading-relaxed text-slate-500">Scale: $60k → $247k/mo in 5 months.</p>
-      </article>
-
-      <article class="reveal card-hover flex flex-col rounded-3xl border border-white/10 bg-ink-950/60 p-7">
-        <span class="w-fit rounded-full border border-violet-400/25 bg-violet-500/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-violet-400">Supplements</span>
-        <h3 class="mt-5 text-lg font-bold text-white">PeakForm</h3>
-         <p class="mt-2 text-sm text-slate-400">Profitable on Meta Ads but capped by CPA. We found three new AI UGC hooks and opened TikTok Ads as a second channel.</p>
-        <dl class="mt-6 grid grid-cols-2 gap-4 border-t border-white/8 pt-6">
-          <div><dd class="text-2xl font-black text-lime-400">-41%</dd><dt class="text-xs text-slate-500">Cost per acquisition</dt></div>
-          <div><dd class="text-2xl font-black text-white">$1.2M</dd><dt class="text-xs text-slate-500">90-day ad spend scaled</dt></div>
-        </dl>
-        <p class="mt-5 text-xs leading-relaxed text-slate-500">Held CAC target through a 3x budget increase.</p>
-      </article>
-
-      <article class="reveal card-hover flex flex-col rounded-3xl border border-white/10 bg-ink-950/60 p-7">
-        <span class="w-fit rounded-full border border-amber-400/25 bg-amber-400/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-amber-400">Home &amp; lifestyle</span>
-        <h3 class="mt-5 text-lg font-bold text-white">Terra Goods</h3>
-         <p class="mt-2 text-sm text-slate-400">New product launch into a cold market. We ran a 30-day UGC-led launch sprint across Meta Ads and YouTube Ads.</p>
-        <dl class="mt-6 grid grid-cols-2 gap-4 border-t border-white/8 pt-6">
-          <div><dd class="text-2xl font-black text-lime-400">$0.42</dd><dt class="text-xs text-slate-500">Cost per landing view</dt></div>
-          <div><dd class="text-2xl font-black text-white">11,400</dd><dt class="text-xs text-slate-500">Units sold in 30 days</dt></div>
-        </dl>
-        <p class="mt-5 text-xs leading-relaxed text-slate-500">Sold out launch inventory 9 days early.</p>
-      </article>
-    </div>
-
-    <!-- testimonial -->
-    <div class="reveal mt-14 grid gap-6 lg:grid-cols-2">
-      <figure class="rounded-3xl border border-white/10 bg-gradient-to-br from-ink-900/90 to-ink-950/60 p-8">
-        <div class="flex gap-1 text-lime-400">
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-        </div>
-        <blockquote class="mt-5 text-lg leading-relaxed text-slate-200">
-          “We'd burned through two agencies. R0YCE was the first team that came back with a number, a plan, and then hit it.
-          The AI UGC volume is the unlock — we simply never run out of things to test.”
-        </blockquote>
-        <figcaption class="mt-6 flex items-center gap-3">
-          <span class="grid h-11 w-11 place-items-center rounded-full bg-lime-400 font-black text-ink-950">DM</span>
-          <div>
-            <p class="text-sm font-semibold text-white">Dana Mercer</p>
-            <p class="text-xs text-slate-500">Founder, VelaSkin</p>
-          </div>
-        </figcaption>
-      </figure>
-
-      <figure class="rounded-3xl border border-white/10 bg-gradient-to-br from-ink-900/90 to-ink-950/60 p-8">
-        <div class="flex gap-1 text-lime-400">
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
-        </div>
-        <blockquote class="mt-5 text-lg leading-relaxed text-slate-200">
-          “The Slack channel alone is worth the fee. We know what's being tested, what won, and what's scaling — every single day.
-          CPA came down 41% while we tripled spend.”
-        </blockquote>
-        <figcaption class="mt-6 flex items-center gap-3">
-          <span class="grid h-11 w-11 place-items-center rounded-full bg-violet-500 font-black text-white">JA</span>
-          <div>
-            <p class="text-sm font-semibold text-white">Jonas Alvarez</p>
-            <p class="text-xs text-slate-500">Head of Growth, PeakForm</p>
-          </div>
-        </figcaption>
+      <figure class="overflow-hidden rounded-xl border border-line">
+        <img src="assets/dashboard.jpg" alt="Performance dashboard screen showing revenue, active users and conversion rate" loading="lazy" class="h-56 w-full object-cover object-top sm:h-72">
+        <figcaption class="border-t border-line px-4 py-3 text-[11px] text-ink-500">The kind of performance view we review with clients weekly</figcaption>
       </figure>
     </div>
-  </div>
-</section>
 
-<!-- ============ CREATIVE SHOWCASE ============ -->
-<section id="work" class="relative overflow-hidden py-24 lg:py-28">
-  <div class="absolute left-1/2 top-1/3 h-[420px] w-[820px] -translate-x-1/2 rounded-full bg-violet-500/8 blur-[130px]"></div>
-  <div class="relative mx-auto max-w-7xl px-5 lg:px-8">
-    <div class="reveal flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
-      <div class="max-w-2xl">
-        <span class="text-xs font-bold uppercase tracking-[0.2em] text-lime-400">The work</span>
-        <h2 class="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-[42px]">
-          This is what "creative volume" actually looks like.
-        </h2>
-        <p class="mt-5 text-lg text-slate-400">
-          Shipped assets, not mood boards. Tap any clip to play — these are exactly the formats we put in front of Meta Ads, TikTok Ads and YouTube Ads audiences.
+    <!-- 02 AI UGC -->
+    <div class="reveal mt-6 grid items-center gap-8 rounded-2xl border border-line bg-paper p-5 sm:p-7 lg:grid-cols-[.95fr_1.05fr] lg:gap-12">
+      <figure class="order-2 overflow-hidden rounded-xl border border-line lg:order-1">
+        <img src="assets/ai-product-shoot.jpg" alt="Grid of nine AI-generated product photography scenes built from one conditioner brief" loading="lazy" class="h-56 w-full object-cover object-top sm:h-72">
+        <figcaption class="border-t border-line px-4 py-3 text-[11px] text-ink-500">One product brief, nine usable scenes — no studio day</figcaption>
+      </figure>
+      <div class="order-1 lg:order-2">
+        <p class="text-xs font-semibold uppercase tracking-wider text-ink-500">02 · Creative production</p>
+        <h3 class="mt-2 text-xl font-bold text-ink-900 sm:text-2xl">AI UGC content creation</h3>
+        <p class="mt-3 text-[15px] leading-relaxed text-ink-600">
+          Creator-style video built with AI avatars, voices and editing tools — keeping the native,
+          phone-shot feel that performs on paid social, without booking a shoot for every variant.
+          We script the hooks, produce the assets, and cut them for each placement.
+        </p>
+        <ul class="mt-5 space-y-2.5 text-[15px] text-ink-700">
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Hook and script writing mapped to real buyer objections</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>AI creator avatars with consistent delivery</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>AI product visuals for feed, stories and thumbnails</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>9:16, 4:5 and 1:1 cutdowns with captions</li>
+        </ul>
+        <a href="#work" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent-600 hover:underline">See example work →</a>
+      </div>
+    </div>
+
+    <!-- 03 + 04 -->
+    <div class="mt-6 grid gap-6 lg:grid-cols-2">
+      <div class="reveal rounded-2xl border border-line bg-paper p-6 sm:p-7">
+        <p class="text-xs font-semibold uppercase tracking-wider text-ink-500">03 · Conversion</p>
+        <h3 class="mt-2 text-lg font-bold text-ink-900">Landing page improvements</h3>
+        <p class="mt-2.5 text-[15px] leading-relaxed text-ink-600">
+          We work on the page your traffic actually lands on — the offer, the proof, the form length
+          and the mobile experience — so more of the clicks you already pay for turn into enquiries
+          and calls.
         </p>
       </div>
-      <a href="#book" class="group inline-flex shrink-0 items-center gap-2 rounded-2xl border border-white/12 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">
+      <div class="reveal rounded-2xl border border-line bg-paper p-6 sm:p-7">
+        <p class="text-xs font-semibold uppercase tracking-wider text-ink-500">04 · Measurement</p>
+        <h3 class="mt-2 text-lg font-bold text-ink-900">Conversion tracking &amp; analytics</h3>
+        <p class="mt-2.5 text-[15px] leading-relaxed text-ink-600">
+          Pixel installation, event setup and a dashboard that shows spend, leads and booked calls in
+          one place. If the data is wrong, every optimisation after it is a guess — so this comes first.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="process" class="border-b border-line bg-paper">
+  <div class="mx-auto max-w-8xl px-5 py-16 lg:px-8 lg:py-20">
+    <div class="reveal max-w-2xl">
+      <p class="text-xs font-semibold uppercase tracking-wider text-accent-600">How it works</p>
+      <h2 class="mt-3 text-2xl font-bold tracking-tight text-ink-900 sm:text-3xl lg:text-[2.15rem]">Four steps, from first call to running campaigns.</h2>
+    </div>
+
+    <div class="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="reveal">
+        <span class="text-sm font-semibold text-accent-500">Step 1</span>
+        <h3 class="mt-2 text-[17px] font-semibold text-ink-900">Strategy call &amp; audit</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink-600">We look at your account, creative, offer and tracking, and tell you what we'd change — whether or not you hire us.</p>
+      </div>
+      <div class="reveal">
+        <span class="text-sm font-semibold text-accent-500">Step 2</span>
+        <h3 class="mt-2 text-[17px] font-semibold text-ink-900">Growth plan</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink-600">A written plan: channels, budget split, the angles we'll test, and the number we're aiming for.</p>
+      </div>
+      <div class="reveal">
+        <span class="text-sm font-semibold text-accent-500">Step 3</span>
+        <h3 class="mt-2 text-[17px] font-semibold text-ink-900">Creative &amp; build</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink-600">First creative batch, campaign build, pixel and events, and any landing page changes — in week one.</p>
+      </div>
+      <div class="reveal">
+        <span class="text-sm font-semibold text-accent-500">Step 4</span>
+        <h3 class="mt-2 text-[17px] font-semibold text-ink-900">Test, report, repeat</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink-600">A weekly test read, a clear monthly report, and a channel you can ask questions in any time.</p>
+      </div>
+    </div>
+
+    <!-- what you get, in plain terms -->
+    <div class="reveal mt-12 grid gap-4 rounded-2xl border border-line bg-mist p-6 sm:grid-cols-3 sm:p-7">
+      <div>
+        <p class="text-sm font-semibold text-ink-900">You always know what's running</p>
+        <p class="mt-1.5 text-sm leading-relaxed text-ink-600">Every live ad, budget and test lives in one shared place.</p>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-ink-900">You own everything</p>
+        <p class="mt-1.5 text-sm leading-relaxed text-ink-600">Ad accounts, pixel, creative files and dashboards stay yours.</p>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-ink-900">You can leave</p>
+        <p class="mt-1.5 text-sm leading-relaxed text-ink-600">Month-to-month after the first cycle, with 30 days' notice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUR WORK ============ -->
+<section id="work" class="border-b border-line bg-mist">
+  <div class="mx-auto max-w-8xl px-5 py-16 lg:px-8 lg:py-20">
+    <div class="reveal flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-wider text-accent-600">Our work</p>
+        <h2 class="mt-3 text-2xl font-bold tracking-tight text-ink-900 sm:text-3xl lg:text-[2.15rem]">A look at the creative we produce.</h2>
+        <p class="mt-4 text-[16px] leading-relaxed text-ink-600">
+          These are example assets from our production pipeline, in the formats we run on Meta Ads,
+          TikTok Ads and YouTube Ads. Tap a clip to play it.
+        </p>
+      </div>
+      <a href="#book" class="cta inline-flex shrink-0 items-center gap-2 rounded-lg border border-line bg-paper px-5 py-3 text-sm font-semibold text-ink-800 transition hover:border-ink-400">
         Get a batch like this
-        <svg class="h-4 w-4 text-lime-400 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
 
-    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 
-      <!-- video 1 -->
-      <figure class="reveal group relative overflow-hidden rounded-3xl border border-white/10 bg-ink-950">
-        <div class="relative aspect-[9/16] overflow-hidden bg-black">
-          <video class="js-reel h-full w-full cursor-pointer object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                 src="assets/ugc-video-1.mp4" muted loop playsinline preload="metadata"></video>
-          <button type="button" aria-label="Play video" class="js-play absolute inset-0 grid place-items-center">
-            <span class="grid h-16 w-16 place-items-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur transition group-hover:scale-110 group-hover:bg-lime-400 group-hover:text-ink-950">
-              <svg class="ml-0.5 h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      <figure class="reveal group relative overflow-hidden rounded-xl border border-line bg-ink-900">
+        <div class="relative aspect-[9/16] overflow-hidden">
+          <video class="js-reel h-full w-full cursor-pointer object-cover" src="assets/ugc-video-1.mp4" muted loop playsinline preload="metadata"></video>
+          <button type="button" aria-label="Play clip" class="js-play absolute inset-0 grid place-items-center">
+            <span class="grid h-12 w-12 place-items-center rounded-full bg-white/90 text-ink-900 shadow-soft transition group-hover:scale-105">
+              <svg class="ml-0.5 h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </span>
           </button>
-          <div class="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between p-4">
-            <span class="rounded-full bg-black/60 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-lime-400 backdrop-blur">AI UGC</span>
-            <span class="rounded-full bg-black/60 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white/70 backdrop-blur">9:16</span>
-          </div>
-          <div class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-4 pt-10">
-            <p class="text-sm font-bold text-white">Creator-style UGC</p>
-            <p class="text-xs text-slate-400">Tested on Meta Ads + TikTok Ads</p>
-          </div>
         </div>
+        <figcaption class="bg-paper px-4 py-3">
+          <p class="text-sm font-semibold text-ink-900">Creator-style UGC</p>
+          <p class="text-xs text-ink-500">Meta Ads &amp; TikTok Ads</p>
+        </figcaption>
       </figure>
 
-      <!-- video 2 -->
-      <figure class="reveal group relative overflow-hidden rounded-3xl border border-white/10 bg-ink-950">
-        <div class="relative aspect-[9/16] overflow-hidden bg-black">
-          <video class="js-reel h-full w-full cursor-pointer object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                 src="assets/ugc-video-2.mp4" muted loop playsinline preload="metadata"></video>
-          <button type="button" aria-label="Play video" class="js-play absolute inset-0 grid place-items-center">
-            <span class="grid h-16 w-16 place-items-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur transition group-hover:scale-110 group-hover:bg-lime-400 group-hover:text-ink-950">
-              <svg class="ml-0.5 h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      <figure class="reveal group relative overflow-hidden rounded-xl border border-line bg-ink-900">
+        <div class="relative aspect-[9/16] overflow-hidden">
+          <video class="js-reel h-full w-full cursor-pointer object-cover" src="assets/ugc-video-2.mp4" muted loop playsinline preload="metadata"></video>
+          <button type="button" aria-label="Play clip" class="js-play absolute inset-0 grid place-items-center">
+            <span class="grid h-12 w-12 place-items-center rounded-full bg-white/90 text-ink-900 shadow-soft transition group-hover:scale-105">
+              <svg class="ml-0.5 h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </span>
           </button>
-          <div class="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between p-4">
-            <span class="rounded-full bg-black/60 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-violet-300 backdrop-blur">AI product</span>
-            <span class="rounded-full bg-black/60 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white/70 backdrop-blur">9:16</span>
-          </div>
-          <div class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-4 pt-10">
-            <p class="text-sm font-bold text-white">AI product motion</p>
-            <p class="text-xs text-slate-400">Built for YouTube Ads + Reels</p>
-          </div>
         </div>
+        <figcaption class="bg-paper px-4 py-3">
+          <p class="text-sm font-semibold text-ink-900">AI product motion</p>
+          <p class="text-xs text-ink-500">YouTube Ads &amp; Reels</p>
+        </figcaption>
       </figure>
 
-      <!-- image stack -->
-      <div class="reveal grid gap-6">
-        <figure class="group relative overflow-hidden rounded-3xl border border-white/10 bg-ink-950">
-          <div class="relative aspect-[4/3] overflow-hidden">
-            <img src="assets/ai-product-visual.jpg" alt="AI-generated Nescafé mocha product visual with coffee splash" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
-            <div class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-4 pt-12">
-              <p class="text-sm font-bold text-white">AI product hero visual</p>
-              <p class="text-xs text-slate-400">CGI-grade key art, no studio booked</p>
-            </div>
-          </div>
-        </figure>
-        <figure class="group relative overflow-hidden rounded-3xl border border-white/10 bg-ink-950">
-          <div class="relative aspect-[4/3] overflow-hidden">
-            <img src="assets/ai-product-shoot.jpg" alt="Nine AI-generated product photography scenes for a tea tree oil conditioner" loading="lazy" class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
-            <div class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-4 pt-12">
-              <p class="text-sm font-bold text-white">One SKU → nine scenes</p>
-              <p class="text-xs text-slate-400">A month of feed content from a single shoot brief</p>
-            </div>
-          </div>
-        </figure>
-      </div>
+      <figure class="reveal group overflow-hidden rounded-xl border border-line bg-paper">
+        <div class="relative aspect-[9/16] overflow-hidden">
+          <img src="assets/ai-product-shoot.jpg" alt="Nine AI-generated product scenes for a single conditioner product" loading="lazy" class="h-full w-full object-cover object-top">
+        </div>
+        <figcaption class="px-4 py-3">
+          <p class="text-sm font-semibold text-ink-900">Product scene set</p>
+          <p class="text-xs text-ink-500">Nine scenes, one brief</p>
+        </figcaption>
+      </figure>
+
+      <figure class="reveal group overflow-hidden rounded-xl border border-line bg-paper">
+        <div class="relative aspect-[9/16] overflow-hidden">
+          <img src="assets/ai-product-visual.jpg" alt="AI-generated beverage product key visual with liquid splash" loading="lazy" class="h-full w-full object-cover object-center">
+        </div>
+        <figcaption class="px-4 py-3">
+          <p class="text-sm font-semibold text-ink-900">Product key visual</p>
+          <p class="text-xs text-ink-500">Feed &amp; thumbnail art</p>
+        </figcaption>
+      </figure>
     </div>
 
-    <!-- stat rail -->
-    <dl class="reveal mt-14 grid grid-cols-2 gap-4 rounded-3xl border border-white/8 bg-ink-900/50 p-8 sm:grid-cols-4">
-      <div class="text-center">
-        <dd class="text-3xl font-black text-lime-400">43M</dd>
-        <dt class="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">Views · one campaign</dt>
-      </div>
-      <div class="text-center">
-        <dd class="text-3xl font-black text-white">60+</dd>
-        <dt class="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">Assets per month</dt>
-      </div>
-      <div class="text-center">
-        <dd class="text-3xl font-black text-white">48h</dd>
-        <dt class="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">Brief to launch</dt>
-      </div>
-      <div class="text-center">
-        <dd class="text-3xl font-black text-lime-400">$0</dd>
-        <dt class="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">Shoot-day cost</dt>
-      </div>
-    </dl>
+    <p class="reveal mt-6 text-xs leading-relaxed text-ink-500">
+      Sample work shown for format reference. Client-specific results are shared on request, with permission.
+    </p>
   </div>
 </section>
 
-<!-- ============ PROCESS ============ -->
-<section id="process" class="py-24 lg:py-28">
-  <div class="mx-auto max-w-7xl px-5 lg:px-8">
-    <div class="reveal mx-auto max-w-3xl text-center">
-      <span class="text-xs font-bold uppercase tracking-[0.2em] text-lime-400">How it works</span>
-      <h2 class="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-[42px]">From audit to compounding growth in 90 days.</h2>
+<!-- ============ RESULTS / PROOF ============ -->
+<section id="results" class="border-b border-line bg-paper">
+  <div class="mx-auto max-w-8xl px-5 py-16 lg:px-8 lg:py-20">
+    <div class="reveal max-w-2xl">
+      <p class="text-xs font-semibold uppercase tracking-wider text-accent-600">Results</p>
+      <h2 class="mt-3 text-2xl font-bold tracking-tight text-ink-900 sm:text-3xl lg:text-[2.15rem]">One result we can show in full.</h2>
+      <p class="mt-4 text-[16px] leading-relaxed text-ink-600">
+        We only publish numbers we can screenshot. Here is an organic content sprint, measured in TikTok's own analytics.
+      </p>
     </div>
 
-    <ol class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <li class="reveal relative rounded-3xl border border-white/8 bg-ink-900/50 p-7">
-        <span class="text-5xl font-black text-white/8">01</span>
-        <h3 class="mt-3 text-lg font-bold text-white">Deep audit</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-400">Days 1–7. We tear down your account, creative library, funnel, and unit economics. You get the findings whether you hire us or not.</p>
-      </li>
-      <li class="reveal relative rounded-3xl border border-white/8 bg-ink-900/50 p-7">
-        <span class="text-5xl font-black text-white/8">02</span>
-        <h3 class="mt-3 text-lg font-bold text-white">Strategy &amp; offer</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-400">Days 7–14. We agree the KPI, pick the channels, define the angles, and lock the creative roadmap for the first 60 days.</p>
-      </li>
-      <li class="reveal relative rounded-3xl border border-white/8 bg-ink-900/50 p-7">
-        <span class="text-5xl font-black text-white/8">03</span>
-        <h3 class="mt-3 text-lg font-bold text-white">Creative engine on</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-400">Days 14–30. First AI UGC batch ships, campaigns go live, and the weekly test cadence starts running.</p>
-      </li>
-      <li class="reveal relative rounded-3xl border border-white/8 bg-ink-900/50 p-7">
-        <span class="text-5xl font-black text-white/8">04</span>
-        <h3 class="mt-3 text-lg font-bold text-white">Scale &amp; compound</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-400">Day 30 onward. Winners get budget and variants, losers get killed fast, and profit gets reinvested into new channels.</p>
-      </li>
-    </ol>
+    <div class="reveal mt-10 grid items-center gap-8 rounded-2xl border border-line bg-mist p-5 sm:p-7 lg:grid-cols-[.85fr_1.15fr] lg:gap-12">
+      <figure class="overflow-hidden rounded-xl border border-line bg-paper">
+        <img src="assets/tiktok-analytics.jpg" alt="TikTok analytics panel showing 43M post views, 259K profile views, 6.8M likes and 824K shares between 1 October and 10 November" loading="lazy" class="w-full object-cover object-top">
+      </figure>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-ink-500">Content sprint · TikTok</p>
+        <h3 class="mt-2 text-xl font-bold text-ink-900 sm:text-2xl">43M views in 41 days</h3>
+        <p class="mt-3 text-[15px] leading-relaxed text-ink-600">
+          An AI-assisted content sprint produced 43M post views, 259K profile views, 6.8M likes and
+          824K shares between 1 October and 10 November. The content was then used as retargeting
+          material inside paid campaigns.
+        </p>
+        <dl class="mt-6 grid grid-cols-2 gap-4 border-t border-line pt-5 sm:grid-cols-4">
+          <div><dt class="text-xs text-ink-500">Post views</dt><dd class="mt-0.5 text-lg font-bold text-ink-900">43M</dd></div>
+          <div><dt class="text-xs text-ink-500">Likes</dt><dd class="mt-0.5 text-lg font-bold text-ink-900">6.8M</dd></div>
+          <div><dt class="text-xs text-ink-500">Comments</dt><dd class="mt-0.5 text-lg font-bold text-ink-900">1M</dd></div>
+          <div><dt class="text-xs text-ink-500">Shares</dt><dd class="mt-0.5 text-lg font-bold text-ink-900">824K</dd></div>
+        </dl>
+        <p class="mt-4 text-xs leading-relaxed text-ink-500">Source: TikTok analytics, 1 Oct – 10 Nov. Organic reach; paid performance metrics available on request.</p>
+      </div>
+    </div>
+
+    <div class="mt-10 grid gap-4 sm:grid-cols-3">
+      <div class="reveal rounded-xl border border-line bg-paper p-5">
+        <p class="text-sm font-semibold text-ink-900">References on request</p>
+        <p class="mt-1.5 text-sm leading-relaxed text-ink-600">We'll introduce you to current clients before you decide.</p>
+      </div>
+      <div class="reveal rounded-xl border border-line bg-paper p-5">
+        <p class="text-sm font-semibold text-ink-900">Numbers in writing</p>
+        <p class="mt-1.5 text-sm leading-relaxed text-ink-600">Every report comes with the source screen it was pulled from.</p>
+      </div>
+      <div class="reveal rounded-xl border border-line bg-paper p-5">
+        <p class="text-sm font-semibold text-ink-900">No invented wins</p>
+        <p class="mt-1.5 text-sm leading-relaxed text-ink-600">If we can't verify it, it doesn't go on this page.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ============ PRICING ============ -->
-<section id="pricing" class="border-y border-white/8 bg-ink-900/40 py-24 lg:py-28">
-  <div class="mx-auto max-w-7xl px-5 lg:px-8">
-    <div class="reveal mx-auto max-w-3xl text-center">
-      <span class="text-xs font-bold uppercase tracking-[0.2em] text-lime-400">Engagements</span>
-      <h2 class="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-[42px]">Pick the level of firepower you need.</h2>
-      <p class="mt-5 text-lg text-slate-400">Flat monthly retainers. No percentage of ad spend, no long lock-ins.</p>
+<section id="pricing" class="border-b border-line bg-mist">
+  <div class="mx-auto max-w-8xl px-5 py-16 lg:px-8 lg:py-20">
+    <div class="reveal max-w-2xl">
+      <p class="text-xs font-semibold uppercase tracking-wider text-accent-600">Engagements</p>
+      <h2 class="mt-3 text-2xl font-bold tracking-tight text-ink-900 sm:text-3xl lg:text-[2.15rem]">Simple monthly retainers.</h2>
+      <p class="mt-4 text-[16px] leading-relaxed text-ink-600">No percentage of ad spend, no long lock-ins. Final scope and price are agreed on the strategy call.</p>
     </div>
 
-    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+    <div class="mt-10 grid gap-5 lg:grid-cols-3">
 
-      <div class="reveal card-hover flex flex-col rounded-3xl border border-white/10 bg-ink-950/60 p-8">
-        <h3 class="text-lg font-bold text-white">Creative Only</h3>
-        <p class="mt-2 text-sm text-slate-400">For brands with an in-house buyer who needs endless creative.</p>
-        <p class="mt-6 text-4xl font-black text-white">$2,500<span class="text-base font-semibold text-slate-500">/mo</span></p>
-        <ul class="mt-7 flex-1 space-y-3 text-sm">
-          <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300">40 AI UGC video assets / month</span></li>
-          <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300">Hook &amp; script writing included</span></li>
-          <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300">Platform-native cutdowns</span></li>
-          <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300">Shared Slack channel</span></li>
+      <div class="reveal flex flex-col rounded-2xl border border-line bg-paper p-6 sm:p-7">
+        <h3 class="text-lg font-bold text-ink-900">Creative Only</h3>
+        <p class="mt-1.5 text-sm text-ink-600">For teams running their own ads who need more creative.</p>
+        <p class="mt-5 text-3xl font-bold text-ink-900">$2,500<span class="text-base font-medium text-ink-500">/mo</span></p>
+        <ul class="mt-6 flex-1 space-y-2.5 text-[15px] text-ink-700">
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Up to 40 AI UGC assets / month</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Hooks, scripts and product visuals</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Platform-native cutdowns</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Shared channel for requests</li>
         </ul>
-        <a href="#book" class="mt-8 block rounded-2xl border border-white/12 bg-white/5 py-3.5 text-center font-bold text-white transition hover:bg-white/10">Book a call</a>
+        <a href="#book" class="cta mt-7 block rounded-lg border border-line py-3 text-center text-sm font-semibold text-ink-800 transition hover:border-ink-400">Book a Strategy Call</a>
       </div>
 
-      <div class="reveal card-hover relative flex flex-col rounded-3xl border-2 border-lime-400/50 bg-gradient-to-b from-lime-400/8 to-ink-950/60 p-8 shadow-glow">
-        <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-lime-400 px-4 py-1.5 text-[11px] font-black uppercase tracking-wider text-ink-950">Most popular</span>
-        <h3 class="text-lg font-bold text-white">Full Growth</h3>
-        <p class="mt-2 text-sm text-slate-400">Our core offer: media buying plus the AI UGC engine, run together.</p>
-        <p class="mt-6 text-4xl font-black text-white">$5,900<span class="text-base font-semibold text-slate-500">/mo</span></p>
-        <ul class="mt-7 flex-1 space-y-3 text-sm">
-          <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-200">Everything in Creative Only</span></li>
-          <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-200">60 AI UGC assets / month</span></li>
-          <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-200">Full Meta, TikTok &amp; YouTube Ads management</span></li>
-          <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-200">Weekly tests, daily optimisation</span></li>
-          <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-200">KPI guarantee, month one</span></li>
-          <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-200">CRO support on landing pages</span></li>
+      <div class="reveal relative flex flex-col rounded-2xl border-2 border-accent-600 bg-paper p-6 shadow-lift sm:p-7">
+        <span class="absolute -top-3 left-6 rounded-md bg-accent-600 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white">Most chosen</span>
+        <h3 class="text-lg font-bold text-ink-900">Full Growth</h3>
+        <p class="mt-1.5 text-sm text-ink-600">Media buying and creative production, run together.</p>
+        <p class="mt-5 text-3xl font-bold text-ink-900">$5,900<span class="text-base font-medium text-ink-500">/mo</span></p>
+        <ul class="mt-6 flex-1 space-y-2.5 text-[15px] text-ink-700">
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in Creative Only</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Up to 60 AI UGC assets / month</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Meta, TikTok &amp; YouTube Ads management</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Weekly tests, weekly written read</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Pixel, events and dashboard setup</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Landing page recommendations</li>
         </ul>
-        <a href="#book" class="mt-8 block rounded-2xl bg-lime-400 py-3.5 text-center font-bold text-ink-950 transition hover:bg-lime-500">Book a call</a>
+        <a href="#book" class="cta mt-7 block rounded-lg bg-ink-900 py-3 text-center text-sm font-semibold text-white transition hover:bg-ink-800">Book a Strategy Call</a>
       </div>
 
-      <div class="reveal card-hover flex flex-col rounded-3xl border border-white/10 bg-ink-950/60 p-8">
-        <h3 class="text-lg font-bold text-white">Scale Partner</h3>
-        <p class="mt-2 text-sm text-slate-400">For brands spending $150k+/mo that want a fractional growth team.</p>
-        <p class="mt-6 text-4xl font-black text-white">Custom</p>
-        <ul class="mt-7 flex-1 space-y-3 text-sm">
-          <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300">Everything in Full Growth</span></li>
-          <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300">Unlimited creative requests</span></li>
-          <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300">Multi-market &amp; localisation</span></li>
-          <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300">Email, SMS &amp; retention strategy</span></li>
-          <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-slate-300">Bi-weekly leadership sessions</span></li>
+      <div class="reveal flex flex-col rounded-2xl border border-line bg-paper p-6 sm:p-7">
+        <h3 class="text-lg font-bold text-ink-900">Scale Partner</h3>
+        <p class="mt-1.5 text-sm text-ink-600">For established offers wanting a fractional growth team.</p>
+        <p class="mt-5 text-3xl font-bold text-ink-900">Custom</p>
+        <ul class="mt-6 flex-1 space-y-2.5 text-[15px] text-ink-700">
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in Full Growth</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Higher creative volume</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Multi-market &amp; localisation</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Email &amp; retention strategy</li>
+          <li class="flex gap-2.5"><svg class="mt-1 h-4 w-4 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Bi-weekly planning sessions</li>
         </ul>
-        <a href="#book" class="mt-8 block rounded-2xl border border-white/12 bg-white/5 py-3.5 text-center font-bold text-white transition hover:bg-white/10">Talk to us</a>
+        <a href="#book" class="cta mt-7 block rounded-lg border border-line py-3 text-center text-sm font-semibold text-ink-800 transition hover:border-ink-400">Talk to us</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ BOOKING / CTA ============ -->
-<section id="book" class="relative overflow-hidden py-24 lg:py-28">
-  <div class="absolute inset-0 grid-lines"></div>
-  <div class="absolute left-1/2 top-0 h-[420px] w-[820px] -translate-x-1/2 rounded-full bg-lime-400/10 blur-[120px]"></div>
+<section id="book" class="border-b border-line bg-paper">
+  <div class="mx-auto grid max-w-8xl gap-12 px-5 py-16 lg:grid-cols-[.9fr_1.1fr] lg:gap-16 lg:px-8 lg:py-20">
 
-  <div class="relative mx-auto max-w-7xl px-5 lg:px-8">
-    <div class="grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:items-start">
+    <div class="reveal">
+      <p class="text-xs font-semibold uppercase tracking-wider text-accent-600">Book a strategy call</p>
+      <h2 class="mt-3 text-2xl font-bold leading-tight tracking-tight text-ink-900 sm:text-3xl lg:text-[2.15rem]">
+        30 minutes. A real plan. No pitch deck.
+      </h2>
+      <p class="mt-4 text-[16px] leading-relaxed text-ink-600">
+        Tell us where you are and what you're trying to hit. We'll look at your account, name the
+        biggest constraint, and tell you honestly whether we're the right team to fix it.
+      </p>
 
-      <div class="reveal">
-        <span class="text-xs font-bold uppercase tracking-[0.2em] text-lime-400">Free strategy call</span>
-        <h2 class="mt-4 text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-[44px]">
-          30 minutes. A real plan. No pitch deck.
-        </h2>
-        <p class="mt-6 text-lg leading-relaxed text-slate-400">
-          Tell us where you are and what you're trying to hit. We'll audit your account live, name the
-          biggest constraint, and tell you honestly whether we're the right team to fix it.
-        </p>
-
-        <ul class="mt-8 space-y-4">
-          <li class="flex gap-4">
-            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-lime-400/10 text-lime-400">
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-            </span>
-            <div>
-              <p class="font-semibold text-white">Live account teardown</p>
-              <p class="text-sm text-slate-400">We look at your real numbers, not a hypothetical.</p>
-            </div>
-          </li>
-          <li class="flex gap-4">
-            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-lime-400/10 text-lime-400">
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
-            </span>
-            <div>
-              <p class="font-semibold text-white">A 90-day growth forecast</p>
-              <p class="text-sm text-slate-400">Projected spend, CAC, and revenue ranges based on your data.</p>
-            </div>
-          </li>
-          <li class="flex gap-4">
-            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-lime-400/10 text-lime-400">
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21.4 8 14 2 9.4h7.6z"/></svg>
-            </span>
-            <div>
-              <p class="font-semibold text-white">Sample AI UGC concepts</p>
-              <p class="text-sm text-slate-400">We'll write 3 hooks for your product before the call ends.</p>
-            </div>
-          </li>
-        </ul>
-
-        <div class="mt-10 flex items-center gap-4 rounded-2xl border border-white/8 bg-ink-900/50 p-4">
-          <div class="flex -space-x-3">
-            <span class="grid h-10 w-10 place-items-center rounded-full border-2 border-ink-900 bg-lime-400 text-xs font-black text-ink-950">DM</span>
-            <span class="grid h-10 w-10 place-items-center rounded-full border-2 border-ink-900 bg-violet-500 text-xs font-black text-white">JA</span>
-            <span class="grid h-10 w-10 place-items-center rounded-full border-2 border-ink-900 bg-slate-600 text-xs font-black text-white">RK</span>
-          </div>
-          <p class="text-sm text-slate-400"><b class="text-white">18 calls</b> booked this month · average reply time under 4 hours.</p>
-        </div>
-      </div>
-
-      <!-- Form -->
-      <div class="reveal rounded-3xl border border-white/10 bg-ink-900/70 p-7 shadow-card backdrop-blur-xl sm:p-9">
-        <h3 class="text-xl font-bold text-white">Book your free strategy call</h3>
-        <p class="mt-2 text-sm text-slate-400">Fill this in and we'll send times within one business day.</p>
-
-        <form id="bookingForm" class="mt-7 space-y-4" novalidate>
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div>
-              <label for="name" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-400">Full name</label>
-              <input id="name" name="name" type="text" required placeholder="Alex Rivera"
-                     class="w-full rounded-xl border border-white/12 bg-ink-950/70 px-4 py-3 text-sm text-white placeholder-slate-600 transition" />
-            </div>
-            <div>
-              <label for="email" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-400">Work email</label>
-              <input id="email" name="email" type="email" required placeholder="alex@brand.com"
-                     class="w-full rounded-xl border border-white/12 bg-ink-950/70 px-4 py-3 text-sm text-white placeholder-slate-600 transition" />
-            </div>
-          </div>
-
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div>
-              <label for="company" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-400">Company / brand</label>
-              <input id="company" name="company" type="text" placeholder="VelaSkin"
-                     class="w-full rounded-xl border border-white/12 bg-ink-950/70 px-4 py-3 text-sm text-white placeholder-slate-600 transition" />
-            </div>
-            <div>
-              <label for="website" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-400">Website</label>
-              <input id="website" name="website" type="url" placeholder="https://"
-                     class="w-full rounded-xl border border-white/12 bg-ink-950/70 px-4 py-3 text-sm text-white placeholder-slate-600 transition" />
-            </div>
-          </div>
-
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div>
-              <label for="spend" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-400">Monthly ad spend</label>
-              <select id="spend" name="spend" class="w-full rounded-xl border border-white/12 bg-ink-950/70 px-4 py-3 text-sm text-white transition">
-                <option>Under $10k</option>
-                <option selected>$10k – $50k</option>
-                <option>$50k – $150k</option>
-                <option>$150k – $500k</option>
-                <option>$500k+</option>
-              </select>
-            </div>
-            <div>
-              <label for="service" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-400">What do you need?</label>
-              <select id="service" name="service" class="w-full rounded-xl border border-white/12 bg-ink-950/70 px-4 py-3 text-sm text-white transition">
-                <option>Full Growth (media + UGC)</option>
-                <option>Creative / AI UGC only</option>
-                <option>Paid media only</option>
-                <option>Scale Partner</option>
-                <option>Not sure yet</option>
-              </select>
-            </div>
-          </div>
-
+      <ul class="mt-7 space-y-4">
+        <li class="flex gap-3">
+          <svg class="mt-0.5 h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
           <div>
-            <label for="message" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-400">What are you trying to hit?</label>
-            <textarea id="message" name="message" rows="3" placeholder="Current revenue, target, and the biggest thing blocking you…"
-                      class="w-full resize-none rounded-xl border border-white/12 bg-ink-950/70 px-4 py-3 text-sm text-white placeholder-slate-600 transition"></textarea>
+            <p class="text-[15px] font-semibold text-ink-900">Account and funnel review</p>
+            <p class="mt-0.5 text-sm text-ink-600">Your real numbers, not a hypothetical.</p>
           </div>
-
-          <div id="formError" class="hidden rounded-xl border border-red-400/30 bg-red-400/10 px-4 py-3 text-sm text-red-300"></div>
-
-          <button type="submit" id="submitBtn"
-                  class="group flex w-full items-center justify-center gap-2 rounded-2xl bg-lime-400 py-4 text-base font-bold text-ink-950 shadow-glow transition hover:bg-lime-500 disabled:opacity-70">
-            <span id="btnLabel">Request my strategy call</span>
-            <svg class="h-5 w-5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </button>
-
-          <p class="text-center text-xs text-slate-500">No spam, no drip sequences. One reply from a human, with times.</p>
-        </form>
-
-        <div id="formSuccess" class="hidden py-10 text-center">
-          <span class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-lime-400 text-ink-950">
-            <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          </span>
-          <h3 class="mt-6 text-2xl font-black text-white">Request sent successfully!</h3>
-          <p class="mx-auto mt-3 max-w-sm text-slate-400">Your call request has been emailed directly to <b class="text-white">roycemarketing72@gmail.com</b>. We will reach out within one business day.</p>
-          <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
-            <a href="https://wa.me/2349042436206" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-2.5 text-xs font-bold text-white transition hover:bg-emerald-500">
-              Message us on WhatsApp
-            </a>
-            <button id="resetForm" class="text-sm font-semibold text-lime-400 underline underline-offset-4 hover:text-lime-500">Send another request</button>
+        </li>
+        <li class="flex gap-3">
+          <svg class="mt-0.5 h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
+          <div>
+            <p class="text-[15px] font-semibold text-ink-900">A written growth plan</p>
+            <p class="mt-0.5 text-sm text-ink-600">Channels, budget split, angles to test, target cost per call.</p>
           </div>
+        </li>
+        <li class="flex gap-3">
+          <svg class="mt-0.5 h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="14" height="14" rx="3"/><path d="M16 10l6-3.5v11L16 14z"/></svg>
+          <div>
+            <p class="text-[15px] font-semibold text-ink-900">Three hook ideas for your offer</p>
+            <p class="mt-0.5 text-sm text-ink-600">Written on the call, yours to keep either way.</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="mt-7 rounded-xl border border-line bg-mist p-4">
+        <p class="text-sm text-ink-600">Prefer to talk first?</p>
+        <div class="mt-2 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          <a href="https://wa.me/2349042436206" target="_blank" rel="noopener" class="font-semibold text-accent-600 hover:underline">WhatsApp: 0904 243 6206</a>
+          <a href="mailto:roycemarketing72@gmail.com" class="font-semibold text-accent-600 hover:underline">roycemarketing72@gmail.com</a>
         </div>
       </div>
+    </div>
 
+    <!-- Form -->
+    <div class="reveal rounded-2xl border border-line bg-mist p-5 sm:p-7">
+      <h3 class="text-lg font-bold text-ink-900">Request your strategy call</h3>
+      <p class="mt-1.5 text-sm text-ink-600">Four fields are enough — we'll ask the rest on the call.</p>
+
+      <form id="bookingForm" class="mt-6 space-y-4" novalidate>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="name" class="mb-1.5 block text-xs font-semibold text-ink-700">Full name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" placeholder="Alex Rivera"
+                   class="w-full rounded-lg border border-line bg-paper px-3.5 py-2.5 text-sm text-ink-900 placeholder-ink-400 transition" />
+          </div>
+          <div>
+            <label for="email" class="mb-1.5 block text-xs font-semibold text-ink-700">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" placeholder="alex@brand.com"
+                   class="w-full rounded-lg border border-line bg-paper px-3.5 py-2.5 text-sm text-ink-900 placeholder-ink-400 transition" />
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="company" class="mb-1.5 block text-xs font-semibold text-ink-700">Company / offer</label>
+            <input id="company" name="company" type="text" autocomplete="organization" placeholder="Brand or offer name"
+                   class="w-full rounded-lg border border-line bg-paper px-3.5 py-2.5 text-sm text-ink-900 placeholder-ink-400 transition" />
+          </div>
+          <div>
+            <label for="spend" class="mb-1.5 block text-xs font-semibold text-ink-700">Monthly ad spend</label>
+            <select id="spend" name="spend" class="w-full rounded-lg border border-line bg-paper px-3.5 py-2.5 text-sm text-ink-900 transition">
+              <option>Not running ads yet</option>
+              <option>Under $1,000</option>
+              <option selected>$1,000 – $5,000</option>
+              <option>$5,000 – $15,000</option>
+              <option>$15,000+</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="service" class="mb-1.5 block text-xs font-semibold text-ink-700">What do you need help with?</label>
+          <select id="service" name="service" class="w-full rounded-lg border border-line bg-paper px-3.5 py-2.5 text-sm text-ink-900 transition">
+            <option>Full Growth (ads + creative)</option>
+            <option>Creative / AI UGC only</option>
+            <option>Paid ads only</option>
+            <option>Landing page / tracking</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message" class="mb-1.5 block text-xs font-semibold text-ink-700">What are you trying to hit? <span class="font-normal text-ink-500">(optional)</span></label>
+          <textarea id="message" name="message" rows="3" placeholder="Current revenue, target, and the biggest thing blocking you…"
+                    class="w-full resize-none rounded-lg border border-line bg-paper px-3.5 py-2.5 text-sm text-ink-900 placeholder-ink-400 transition"></textarea>
+        </div>
+
+        <div id="formError" class="hidden rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"></div>
+
+        <button type="submit" id="submitBtn"
+                class="cta flex w-full items-center justify-center gap-2 rounded-lg bg-ink-900 py-3.5 text-[15px] font-semibold text-white transition hover:bg-ink-800 disabled:opacity-60">
+          <span id="btnLabel">Request my strategy call</span>
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+
+        <p class="text-center text-xs text-ink-500">One reply from a person, within one business day. No drip sequences.</p>
+      </form>
+
+      <div id="formSuccess" class="hidden py-8 text-center">
+        <span class="mx-auto grid h-14 w-14 place-items-center rounded-full bg-accent-50 text-accent-600">
+          <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </span>
+        <h3 class="mt-5 text-xl font-bold text-ink-900">Request received</h3>
+        <p class="mx-auto mt-2 max-w-sm text-sm leading-relaxed text-ink-600">
+          It's on its way to <b class="text-ink-900">roycemarketing72@gmail.com</b>. We'll come back to you within one business day with times.
+        </p>
+        <div class="mt-5 flex flex-wrap items-center justify-center gap-3">
+          <a href="https://wa.me/2349042436206" target="_blank" rel="noopener" class="rounded-lg bg-ink-900 px-4 py-2.5 text-xs font-semibold text-white hover:bg-ink-800">Message us on WhatsApp</a>
+          <button id="resetForm" class="text-xs font-semibold text-accent-600 underline underline-offset-4 hover:text-accent-700">Send another request</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============ FAQ ============ -->
-<section id="faq" class="border-t border-white/8 bg-ink-900/40 py-24 lg:py-28">
-  <div class="mx-auto max-w-4xl px-5 lg:px-8">
-    <div class="reveal text-center">
-      <span class="text-xs font-bold uppercase tracking-[0.2em] text-lime-400">FAQ</span>
-      <h2 class="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">Questions we get every week.</h2>
+<section id="faq" class="border-b border-line bg-mist">
+  <div class="mx-auto max-w-3xl px-5 py-16 lg:px-8 lg:py-20">
+    <div class="reveal">
+      <p class="text-xs font-semibold uppercase tracking-wider text-accent-600">FAQ</p>
+      <h2 class="mt-3 text-2xl font-bold tracking-tight text-ink-900 sm:text-3xl">Common questions.</h2>
     </div>
 
-    <div class="reveal mt-12 space-y-3">
-      <details class="group rounded-2xl border border-white/8 bg-ink-950/50 px-6 transition hover:border-white/15">
+    <div class="reveal mt-8 divide-y divide-line border-y border-line">
+      <details class="group">
         <summary class="flex items-center justify-between gap-4 py-5">
-          <span class="font-semibold text-white">What exactly is "AI UGC"?</span>
-          <svg class="chev h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          <span class="font-semibold text-ink-900">What exactly is "AI UGC"?</span>
+          <svg class="chev h-4 w-4 shrink-0 text-ink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-                 <p class="pb-5 text-sm leading-relaxed text-slate-400">Creator-style video content produced with AI avatars, voices, and editing tools instead of booking real creators for every shoot. It keeps the native, phone-shot feel that performs on Meta Ads and TikTok Ads, but lets us produce dozens of hook and angle variants a month at a fraction of the cost and turnaround.</p>
+        <p class="pb-5 text-[15px] leading-relaxed text-ink-600">Creator-style video produced with AI avatars, voices and editing tools instead of booking a creator for every shoot. It keeps the native, phone-shot feel that performs in paid social, while letting us produce more hook and angle variants per month at lower cost and turnaround.</p>
       </details>
 
-      <details class="group rounded-2xl border border-white/8 bg-ink-950/50 px-6 transition hover:border-white/15">
+      <details class="group">
         <summary class="flex items-center justify-between gap-4 py-5">
-          <span class="font-semibold text-white">Do you work with brands outside ecommerce?</span>
-          <svg class="chev h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          <span class="font-semibold text-ink-900">Do you only work with coaches and digital products?</span>
+          <svg class="chev h-4 w-4 shrink-0 text-ink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <p class="pb-5 text-sm leading-relaxed text-slate-400">Our sweet spot is DTC, ecommerce, and lead-gen businesses with a clean unit economic story and at least $10k/month in ad spend. If you're a SaaS or service business with a strong offer, we can usually make it work — the strategy call will tell us honestly.</p>
+        <p class="pb-5 text-[15px] leading-relaxed text-ink-600">That's our focus, but we also work with service businesses and ecommerce brands where the numbers make sense. The strategy call is the honest filter — if we don't think we can help, we'll say so.</p>
       </details>
 
-      <details class="group rounded-2xl border border-white/8 bg-ink-950/50 px-6 transition hover:border-white/15">
+      <details class="group">
         <summary class="flex items-center justify-between gap-4 py-5">
-          <span class="font-semibold text-white">How fast will I see results?</span>
-          <svg class="chev h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          <span class="font-semibold text-ink-900">How soon do campaigns go live?</span>
+          <svg class="chev h-4 w-4 shrink-0 text-ink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <p class="pb-5 text-sm leading-relaxed text-slate-400">First creative ships in week one and campaigns go live inside two weeks. Most accounts see a meaningful CPA or ROAS shift within 30–45 days. Compounding gains — where new channels and retention kick in — typically land in the 60–90 day window.</p>
+        <p class="pb-5 text-[15px] leading-relaxed text-ink-600">First creative batch and campaign build land in week one, with the pixel and events installed alongside. Most accounts have enough data for a first real read within 30–45 days.</p>
       </details>
 
-      <details class="group rounded-2xl border border-white/8 bg-ink-950/50 px-6 transition hover:border-white/15">
+      <details class="group">
         <summary class="flex items-center justify-between gap-4 py-5">
-          <span class="font-semibold text-white">Is there a minimum ad spend?</span>
-          <svg class="chev h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          <span class="font-semibold text-ink-900">What budget do I need?</span>
+          <svg class="chev h-4 w-4 shrink-0 text-ink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <p class="pb-5 text-sm leading-relaxed text-slate-400">We ask for a minimum of $10k/month in media spend for Full Growth engagements. Below that, our Creative Only plan is usually the better fit — you keep buying, we keep you stocked with creative.</p>
+        <p class="pb-5 text-[15px] leading-relaxed text-ink-600">A workable starting point is around $1,000–$2,000 per month in media spend, so tests can reach a decision. Below that we usually recommend starting with Creative Only while you build the creative library.</p>
       </details>
 
-      <details class="group rounded-2xl border border-white/8 bg-ink-950/50 px-6 transition hover:border-white/15">
+      <details class="group">
         <summary class="flex items-center justify-between gap-4 py-5">
-          <span class="font-semibold text-white">Do I own the creative you produce?</span>
-          <svg class="chev h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          <span class="font-semibold text-ink-900">Do I own the creative and the accounts?</span>
+          <svg class="chev h-4 w-4 shrink-0 text-ink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <p class="pb-5 text-sm leading-relaxed text-slate-400">Yes. Every asset, script, and raw file is yours to keep and reuse, including after we stop working together. Same for ad accounts, pixels, and dashboards — nothing is held hostage.</p>
+        <p class="pb-5 text-[15px] leading-relaxed text-ink-600">Yes. Assets, scripts and raw files are yours to keep, including after we stop working together. The same goes for your ad accounts, pixel and dashboards.</p>
       </details>
 
-      <details class="group rounded-2xl border border-white/8 bg-ink-950/50 px-6 transition hover:border-white/15">
+      <details class="group">
         <summary class="flex items-center justify-between gap-4 py-5">
-          <span class="font-semibold text-white">What's the KPI guarantee?</span>
-          <svg class="chev h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          <span class="font-semibold text-ink-900">Do you guarantee results?</span>
+          <svg class="chev h-4 w-4 shrink-0 text-ink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <p class="pb-5 text-sm leading-relaxed text-slate-400">Before we start, we agree a specific target — usually a blended CAC, MER, or revenue number. If we miss it in the first full month and the creative and tracking requirements on your side were met, month one's retainer is refunded.</p>
+        <p class="pb-5 text-[15px] leading-relaxed text-ink-600">No agency can guarantee ad performance. What we do commit to is a written plan with a target number, a weekly test read you can check, and an honest conversation if the account isn't moving in the right direction.</p>
       </details>
 
-      <details class="group rounded-2xl border border-white/8 bg-ink-950/50 px-6 transition hover:border-white/15">
+      <details class="group">
         <summary class="flex items-center justify-between gap-4 py-5">
-          <span class="font-semibold text-white">How do we communicate?</span>
-          <svg class="chev h-5 w-5 shrink-0 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          <span class="font-semibold text-ink-900">How do we communicate?</span>
+          <svg class="chev h-4 w-4 shrink-0 text-ink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <p class="pb-5 text-sm leading-relaxed text-slate-400">A shared Slack channel with your team, a weekly async video update, and one live strategy call per month. You'll never wonder what's happening in your account.</p>
+        <p class="pb-5 text-[15px] leading-relaxed text-ink-600">A shared Slack or WhatsApp channel, a weekly written update, and one live call per month. You should never have to ask what's happening in your account.</p>
       </details>
     </div>
   </div>
 </section>
 
 <!-- ============ FINAL CTA ============ -->
-<section class="relative overflow-hidden py-24">
-  <div class="absolute inset-x-0 top-0 h-full bg-gradient-to-b from-lime-400/8 to-transparent"></div>
-  <div class="relative mx-auto max-w-4xl px-5 text-center lg:px-8">
-    <h2 class="reveal text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
-      Your competitors are shipping creative <span class="grad-text">right now.</span>
+<section class="bg-paper">
+  <div class="mx-auto max-w-3xl px-5 py-16 text-center lg:px-8 lg:py-20">
+    <h2 class="reveal text-2xl font-bold leading-tight tracking-tight text-ink-900 sm:text-3xl lg:text-[2.3rem]">
+      If you know your offer works, the next step is making it predictable.
     </h2>
-    <p class="reveal mx-auto mt-6 max-w-2xl text-lg text-slate-400">
-      Three client slots open this quarter. If you want a media team and an AI creative engine pointed at the same goal, let's talk.
+    <p class="reveal mx-auto mt-4 max-w-2xl text-[16px] leading-relaxed text-ink-600">
+      Book a 30-minute call. We'll review your account, tell you where the biggest leak is, and give
+      you a plan you can run with — with us or without us.
     </p>
-    <div class="reveal mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-      <a href="#book" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-lime-400 px-8 py-4 text-base font-bold text-ink-950 shadow-glow transition hover:bg-lime-500">
-        Book your free strategy call
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <div class="reveal mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+      <a href="#book" class="cta inline-flex items-center justify-center gap-2 rounded-lg bg-ink-900 px-6 py-3.5 text-[15px] font-semibold text-white shadow-soft transition hover:bg-ink-800">
+        Book a Strategy Call
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="https://wa.me/2349042436206" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/12 bg-white/5 px-8 py-4 text-base font-semibold text-white transition hover:bg-white/10">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-lime-400"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.36-1.4a9.84 9.84 0 004.68 1.2h.01c5.43 0 9.84-4.4 9.84-9.84S17.47 2 12.04 2zm5.76 14.04c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-3.48-.72-2.95-1.16-4.8-4.2-4.95-4.4-.14-.2-1.17-1.56-1.17-2.98 0-1.41.74-2.11 1-2.4.26-.29.57-.36.76-.36l.55.01c.18 0 .41-.07.64.49.24.58.8 1.98.87 2.12.07.14.12.31.02.5-.1.2-.15.32-.29.49l-.44.51c-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.2.73-.85.93-1.14.2-.29.39-.24.66-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.38z"/></svg>
-        WhatsApp: 0904 243 6206
+      <a href="https://wa.me/2349042436206" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-lg border border-line px-6 py-3.5 text-[15px] font-semibold text-ink-800 transition hover:border-ink-400">
+        Message on WhatsApp
       </a>
     </div>
 
     <!-- contact strip -->
-    <div class="reveal mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-      <a href="https://wa.me/2349042436206" target="_blank" rel="noopener" class="group flex items-center gap-3 rounded-2xl border border-white/8 bg-ink-900/50 p-4 transition hover:border-lime-400/40 hover:bg-ink-900">
-        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-lime-400/10 text-lime-400">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.36-1.4a9.84 9.84 0 004.68 1.2h.01c5.43 0 9.84-4.4 9.84-9.84S17.47 2 12.04 2zm5.76 14.04c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-3.48-.72-2.95-1.16-4.8-4.2-4.95-4.4-.14-.2-1.17-1.56-1.17-2.98 0-1.41.74-2.11 1-2.4.26-.29.57-.36.76-.36l.55.01c.18 0 .41-.07.64.49.24.58.8 1.98.87 2.12.07.14.12.31.02.5-.1.2-.15.32-.29.49l-.44.51c-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.2.73-.85.93-1.14.2-.29.39-.24.66-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.38z"/></svg>
+    <div class="reveal mt-12 grid gap-3 text-left sm:grid-cols-2 lg:grid-cols-3">
+      <a href="https://wa.me/2349042436206" target="_blank" rel="noopener" class="group flex items-center gap-3 rounded-xl border border-line bg-paper p-4 transition hover:border-ink-400">
+        <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-mist text-accent-600">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.36-1.4a9.84 9.84 0 004.68 1.2h.01c5.43 0 9.84-4.4 9.84-9.84S17.47 2 12.04 2zm5.76 14.04c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-3.48-.72-2.95-1.16-4.8-4.2-4.95-4.4-.14-.2-1.17-1.56-1.17-2.98 0-1.41.74-2.11 1-2.4.26-.29.57-.36.76-.36l.55.01c.18 0 .41-.07.64.49.24.58.8 1.98.87 2.12.07.14.12.31.02.5-.1.2-.15.32-.29.49l-.44.51c-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.2.73-.85.93-1.14.2-.29.39-.24.66-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.38z"/></svg>
         </span>
         <span class="min-w-0">
-          <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500">WhatsApp</span>
-          <span class="block truncate text-sm font-semibold text-white group-hover:text-lime-400">0904 243 6206</span>
+          <span class="block text-[11px] font-medium uppercase tracking-wide text-ink-500">WhatsApp</span>
+          <span class="block truncate text-sm font-semibold text-ink-900">0904 243 6206</span>
         </span>
       </a>
-      <a href="mailto:roycemarketing72@gmail.com" class="group flex items-center gap-3 rounded-2xl border border-white/8 bg-ink-900/50 p-4 transition hover:border-lime-400/40 hover:bg-ink-900">
-        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-lime-400/10 text-lime-400">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M3 6l9 7 9-7"/></svg>
+      <a href="mailto:roycemarketing72@gmail.com" class="group flex items-center gap-3 rounded-xl border border-line bg-paper p-4 transition hover:border-ink-400">
+        <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-mist text-accent-600">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M3 6l9 7 9-7"/></svg>
         </span>
         <span class="min-w-0">
-          <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500">Email</span>
-          <span class="block truncate text-sm font-semibold text-white group-hover:text-lime-400">roycemarketing72@gmail.com</span>
+          <span class="block text-[11px] font-medium uppercase tracking-wide text-ink-500">Email</span>
+          <span class="block truncate text-sm font-semibold text-ink-900">roycemarketing72@gmail.com</span>
         </span>
       </a>
-      <a href="https://www.tiktok.com/@roycemarketing" target="_blank" rel="noopener" class="group flex items-center gap-3 rounded-2xl border border-white/8 bg-ink-900/50 p-4 transition hover:border-lime-400/40 hover:bg-ink-900">
-        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-lime-400/10 text-lime-400">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82A5.6 5.6 0 0115.2 2h-3.1v13.4a2.7 2.7 0 11-1.9-2.58V9.66a5.85 5.85 0 105.02 5.79V9.28a8.6 8.6 0 004.78 1.45V7.62a5.6 5.6 0 01-3.4-1.8z"/></svg>
+      <a href="https://www.instagram.com/royce.marketing" target="_blank" rel="noopener" class="group flex items-center gap-3 rounded-xl border border-line bg-paper p-4 transition hover:border-ink-400">
+        <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-mist text-accent-600">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
         </span>
         <span class="min-w-0">
-          <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500">TikTok</span>
-          <span class="block truncate text-sm font-semibold text-white group-hover:text-lime-400">ROYCE MARKETING</span>
-        </span>
-      </a>
-      <a href="https://www.facebook.com/search/top?q=royce%20marketing" target="_blank" rel="noopener" class="group flex items-center gap-3 rounded-2xl border border-white/8 bg-ink-900/50 p-4 transition hover:border-lime-400/40 hover:bg-ink-900">
-        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-lime-400/10 text-lime-400">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.55.45-1 1-1z"/></svg>
-        </span>
-        <span class="min-w-0">
-          <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500">Facebook</span>
-          <span class="block truncate text-sm font-semibold text-white group-hover:text-lime-400">ROYCE MARKETING</span>
-        </span>
-      </a>
-      <a href="https://www.instagram.com/royce.marketing" target="_blank" rel="noopener" class="group flex items-center gap-3 rounded-2xl border border-white/8 bg-ink-900/50 p-4 transition hover:border-lime-400/40 hover:bg-ink-900">
-        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-lime-400/10 text-lime-400">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        </span>
-        <span class="min-w-0">
-          <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500">Instagram</span>
-          <span class="block truncate text-sm font-semibold text-white group-hover:text-lime-400">ROYCE.MARKETING</span>
-        </span>
-      </a>
-      <a href="https://x.com/roycemarketing" target="_blank" rel="noopener" class="group flex items-center gap-3 rounded-2xl border border-white/8 bg-ink-900/50 p-4 transition hover:border-lime-400/40 hover:bg-ink-900">
-        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-lime-400/10 text-lime-400">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2H21l-6.6 7.54L22 22h-6.3l-4.9-6.4L5.2 22H2.44l7.06-8.06L2 2h6.44l4.44 5.87zm-1.1 18h1.52L7.02 3.9H5.4z"/></svg>
-        </span>
-        <span class="min-w-0">
-          <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500">X (Twitter)</span>
-          <span class="block truncate text-sm font-semibold text-white group-hover:text-lime-400">ROYCE MARKETING</span>
+          <span class="block text-[11px] font-medium uppercase tracking-wide text-ink-500">Instagram</span>
+          <span class="block truncate text-sm font-semibold text-ink-900">ROYCE.MARKETING</span>
         </span>
       </a>
     </div>
@@ -1153,89 +823,78 @@
 </main>
 
 <!-- ============ FOOTER ============ -->
-<footer class="border-t border-white/8 bg-ink-950 py-14">
-  <div class="mx-auto max-w-7xl px-5 lg:px-8">
-    <div class="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+<footer class="border-t border-line bg-mist">
+  <div class="mx-auto max-w-8xl px-5 py-12 lg:px-8">
+    <div class="grid gap-9 sm:grid-cols-2 md:grid-cols-[1.5fr_1fr_1fr_1.3fr]">
       <div>
         <a href="#top" class="flex items-center gap-2.5">
-          <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime-400 font-black text-lg text-ink-950">R</span>
-          <span class="text-[17px] font-extrabold tracking-tight text-white">R0YCE<span class="text-lime-400">.</span></span>
+          <span class="grid h-9 w-9 place-items-center rounded-lg bg-ink-900 text-[15px] font-bold text-white">R</span>
+          <span class="text-[17px] font-bold tracking-tight text-ink-900">R0YCE<span class="text-accent-500">.</span></span>
         </a>
-        <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-500">
-          A performance marketing studio scaling brands with paid media and AI-generated UGC content.
+        <p class="mt-3 max-w-xs text-sm leading-relaxed text-ink-600">
+          Performance marketing for coaches and digital product sellers: paid ads, AI UGC creative, landing pages and tracking.
         </p>
-        <div class="mt-5 flex flex-wrap gap-3">
-          <a href="https://www.tiktok.com/@roycemarketing" target="_blank" rel="noopener" aria-label="TikTok — ROYCE MARKETING" title="TikTok — ROYCE MARKETING" class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 text-slate-400 transition hover:border-lime-400/40 hover:text-lime-400">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82A5.6 5.6 0 0115.2 2h-3.1v13.4a2.7 2.7 0 11-1.9-2.58V9.66a5.85 5.85 0 105.02 5.79V9.28a8.6 8.6 0 004.78 1.45V7.62a5.6 5.6 0 01-3.4-1.8z"/></svg>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a href="https://www.tiktok.com/@roycemarketing" target="_blank" rel="noopener" aria-label="TikTok" class="grid h-9 w-9 place-items-center rounded-lg border border-line bg-paper text-ink-600 transition hover:text-ink-900">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82A5.6 5.6 0 0115.2 2h-3.1v13.4a2.7 2.7 0 11-1.9-2.58V9.66a5.85 5.85 0 105.02 5.79V9.28a8.6 8.6 0 004.78 1.45V7.62a5.6 5.6 0 01-3.4-1.8z"/></svg>
           </a>
-          <a href="https://www.facebook.com/search/top?q=royce%20marketing" target="_blank" rel="noopener" aria-label="Facebook — ROYCE MARKETING" title="Facebook — ROYCE MARKETING" class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 text-slate-400 transition hover:border-lime-400/40 hover:text-lime-400">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.55.45-1 1-1z"/></svg>
+          <a href="https://www.facebook.com/search/top?q=royce%20marketing" target="_blank" rel="noopener" aria-label="Facebook" class="grid h-9 w-9 place-items-center rounded-lg border border-line bg-paper text-ink-600 transition hover:text-ink-900">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.55.45-1 1-1z"/></svg>
           </a>
-          <a href="https://www.instagram.com/royce.marketing" target="_blank" rel="noopener" aria-label="Instagram — ROYCE.MARKETING" title="Instagram — ROYCE.MARKETING" class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 text-slate-400 transition hover:border-lime-400/40 hover:text-lime-400">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <a href="https://www.instagram.com/royce.marketing" target="_blank" rel="noopener" aria-label="Instagram" class="grid h-9 w-9 place-items-center rounded-lg border border-line bg-paper text-ink-600 transition hover:text-ink-900">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
           </a>
-          <a href="https://x.com/roycemarketing" target="_blank" rel="noopener" aria-label="X — ROYCE MARKETING" title="X — ROYCE MARKETING" class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 text-slate-400 transition hover:border-lime-400/40 hover:text-lime-400">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2H21l-6.6 7.54L22 22h-6.3l-4.9-6.4L5.2 22H2.44l7.06-8.06L2 2h6.44l4.44 5.87zm-1.1 18h1.52L7.02 3.9H5.4z"/></svg>
+          <a href="https://x.com/roycemarketing" target="_blank" rel="noopener" aria-label="X (Twitter)" class="grid h-9 w-9 place-items-center rounded-lg border border-line bg-paper text-ink-600 transition hover:text-ink-900">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2H21l-6.6 7.54L22 22h-6.3l-4.9-6.4L5.2 22H2.44l7.06-8.06L2 2h6.44l4.44 5.87zm-1.1 18h1.52L7.02 3.9H5.4z"/></svg>
           </a>
-          <a href="https://wa.me/2349042436206" target="_blank" rel="noopener" aria-label="WhatsApp — 0904 243 6206" title="WhatsApp — 0904 243 6206" class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 text-slate-400 transition hover:border-lime-400/40 hover:text-lime-400">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.36-1.4a9.84 9.84 0 004.68 1.2h.01c5.43 0 9.84-4.4 9.84-9.84S17.47 2 12.04 2zm5.76 14.04c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-3.48-.72-2.95-1.16-4.8-4.2-4.95-4.4-.14-.2-1.17-1.56-1.17-2.98 0-1.41.74-2.11 1-2.4.26-.29.57-.36.76-.36l.55.01c.18 0 .41-.07.64.49.24.58.8 1.98.87 2.12.07.14.12.31.02.5-.1.2-.15.32-.29.49l-.44.51c-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.2.73-.85.93-1.14.2-.29.39-.24.66-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.38z"/></svg>
+          <a href="https://wa.me/2349042436206" target="_blank" rel="noopener" aria-label="WhatsApp" class="grid h-9 w-9 place-items-center rounded-lg border border-line bg-paper text-ink-600 transition hover:text-ink-900">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.36-1.4a9.84 9.84 0 004.68 1.2h.01c5.43 0 9.84-4.4 9.84-9.84S17.47 2 12.04 2zm5.76 14.04c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-3.48-.72-2.95-1.16-4.8-4.2-4.95-4.4-.14-.2-1.17-1.56-1.17-2.98 0-1.41.74-2.11 1-2.4.26-.29.57-.36.76-.36l.55.01c.18 0 .41-.07.64.49.24.58.8 1.98.87 2.12.07.14.12.31.02.5-.1.2-.15.32-.29.49l-.44.51c-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.2.73-.85.93-1.14.2-.29.39-.24.66-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.38z"/></svg>
           </a>
         </div>
       </div>
 
       <div>
-        <p class="text-xs font-bold uppercase tracking-wider text-white">Services</p>
-        <ul class="mt-4 space-y-2.5 text-sm text-slate-500">
-          <li><a href="#services" class="transition hover:text-lime-400">Paid media scaling</a></li>
-          <li><a href="#services" class="transition hover:text-lime-400">Meta Ads</a></li>
-          <li><a href="#services" class="transition hover:text-lime-400">TikTok Ads</a></li>
-          <li><a href="#services" class="transition hover:text-lime-400">YouTube Ads</a></li>
-          <li><a href="#services" class="transition hover:text-lime-400">AI UGC content</a></li>
-          <li><a href="#services" class="transition hover:text-lime-400">Landing page CRO</a></li>
-          <li><a href="#services" class="transition hover:text-lime-400">Email &amp; SMS</a></li>
+        <p class="text-xs font-semibold uppercase tracking-wide text-ink-900">Services</p>
+        <ul class="mt-3 space-y-2 text-sm text-ink-600">
+          <li><a href="#services" class="hover:text-ink-900">Meta Ads</a></li>
+          <li><a href="#services" class="hover:text-ink-900">TikTok Ads</a></li>
+          <li><a href="#services" class="hover:text-ink-900">YouTube Ads</a></li>
+          <li><a href="#services" class="hover:text-ink-900">AI UGC content</a></li>
+          <li><a href="#services" class="hover:text-ink-900">Landing pages</a></li>
+          <li><a href="#services" class="hover:text-ink-900">Conversion tracking</a></li>
         </ul>
       </div>
 
       <div>
-        <p class="text-xs font-bold uppercase tracking-wider text-white">Company</p>
-        <ul class="mt-4 space-y-2.5 text-sm text-slate-500">
-          <li><a href="#results" class="transition hover:text-lime-400">Case studies</a></li>
-          <li><a href="#process" class="transition hover:text-lime-400">Our process</a></li>
-          <li><a href="#pricing" class="transition hover:text-lime-400">Pricing</a></li>
-          <li><a href="#faq" class="transition hover:text-lime-400">FAQ</a></li>
+        <p class="text-xs font-semibold uppercase tracking-wide text-ink-900">Company</p>
+        <ul class="mt-3 space-y-2 text-sm text-ink-600">
+          <li><a href="#work" class="hover:text-ink-900">Our work</a></li>
+          <li><a href="#process" class="hover:text-ink-900">How it works</a></li>
+          <li><a href="#pricing" class="hover:text-ink-900">Pricing</a></li>
+          <li><a href="#faq" class="hover:text-ink-900">FAQ</a></li>
+          <li><a href="#book" class="hover:text-ink-900">Book a call</a></li>
         </ul>
       </div>
 
       <div>
-        <p class="text-xs font-bold uppercase tracking-wider text-white">Get in touch</p>
-        <ul class="mt-4 space-y-3 text-sm">
-          <li>
-            <a href="https://wa.me/2349042436206" target="_blank" rel="noopener" class="group flex items-center gap-2.5 text-slate-500 transition hover:text-lime-400">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="shrink-0"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.36-1.4a9.84 9.84 0 004.68 1.2h.01c5.43 0 9.84-4.4 9.84-9.84S17.47 2 12.04 2zm5.76 14.04c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.03.24-3.48-.72-2.95-1.16-4.8-4.2-4.95-4.4-.14-.2-1.17-1.56-1.17-2.98 0-1.41.74-2.11 1-2.4.26-.29.57-.36.76-.36l.55.01c.18 0 .41-.07.64.49.24.58.8 1.98.87 2.12.07.14.12.31.02.5-.1.2-.15.32-.29.49l-.44.51c-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.2.73-.85.93-1.14.2-.29.39-.24.66-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.38z"/></svg>
-              WhatsApp · 0904 243 6206
-            </a>
-          </li>
-          <li>
-            <a href="mailto:roycemarketing72@gmail.com" class="group flex items-center gap-2.5 break-all text-slate-500 transition hover:text-lime-400">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M3 6l9 7 9-7"/></svg>
-              roycemarketing72@gmail.com
-            </a>
-          </li>
-          <li><a href="https://www.tiktok.com/@roycemarketing" target="_blank" rel="noopener" class="transition hover:text-lime-400">TikTok · ROYCE MARKETING</a></li>
-          <li><a href="https://www.facebook.com/search/top?q=royce%20marketing" target="_blank" rel="noopener" class="transition hover:text-lime-400">Facebook · ROYCE MARKETING</a></li>
-          <li><a href="https://www.instagram.com/royce.marketing" target="_blank" rel="noopener" class="transition hover:text-lime-400">Instagram · ROYCE.MARKETING</a></li>
-          <li><a href="https://x.com/roycemarketing" target="_blank" rel="noopener" class="transition hover:text-lime-400">X · ROYCE MARKETING</a></li>
-          <li><a href="#book" class="transition hover:text-lime-400">Book a strategy call</a></li>
-          <li class="text-slate-500">Remote · serving brands worldwide</li>
+        <p class="text-xs font-semibold uppercase tracking-wide text-ink-900">Contact</p>
+        <ul class="mt-3 space-y-2 text-sm text-ink-600">
+          <li><a href="https://wa.me/2349042436206" target="_blank" rel="noopener" class="hover:text-ink-900">WhatsApp · 0904 243 6206</a></li>
+          <li><a href="mailto:roycemarketing72@gmail.com" class="break-all hover:text-ink-900">roycemarketing72@gmail.com</a></li>
+          <li><a href="https://www.tiktok.com/@roycemarketing" target="_blank" rel="noopener" class="hover:text-ink-900">TikTok · ROYCE MARKETING</a></li>
+          <li><a href="https://www.facebook.com/search/top?q=royce%20marketing" target="_blank" rel="noopener" class="hover:text-ink-900">Facebook · ROYCE MARKETING</a></li>
+          <li><a href="https://www.instagram.com/royce.marketing" target="_blank" rel="noopener" class="hover:text-ink-900">Instagram · ROYCE.MARKETING</a></li>
+          <li><a href="https://x.com/roycemarketing" target="_blank" rel="noopener" class="hover:text-ink-900">X · ROYCE MARKETING</a></li>
+          <li class="text-ink-500">Remote · working with clients worldwide</li>
         </ul>
       </div>
     </div>
 
-    <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/8 pt-8 sm:flex-row">
-      <p class="text-xs text-slate-600">© <span id="year">2025</span> R0YCE Marketing. All rights reserved.</p>
-      <div class="flex gap-6 text-xs text-slate-600">
-        <a href="#" class="transition hover:text-lime-400">Privacy</a>
-        <a href="#" class="transition hover:text-lime-400">Terms</a>
+    <div class="mt-10 flex flex-col items-center justify-between gap-3 border-t border-line pt-6 sm:flex-row">
+      <p class="text-xs text-ink-500">© <span id="year">2025</span> R0YCE Marketing. All rights reserved.</p>
+      <div class="flex gap-5 text-xs text-ink-500">
+        <a href="#" class="hover:text-ink-900">Privacy</a>
+        <a href="#" class="hover:text-ink-900">Terms</a>
       </div>
     </div>
   </div>
@@ -1243,222 +902,260 @@
 
 <!-- sticky mobile CTA -->
 <a href="#book" id="stickyCta"
-   class="fixed bottom-4 left-1/2 z-40 -translate-x-1/2 translate-y-24 rounded-2xl bg-lime-400 px-6 py-3.5 text-sm font-bold text-ink-950 shadow-glow transition-transform duration-300 sm:hidden">
-  Book your free strategy call
+   class="cta fixed inset-x-4 bottom-4 z-40 translate-y-24 rounded-lg bg-ink-900 px-5 py-3.5 text-center text-sm font-semibold text-white shadow-lift transition-transform duration-300 sm:hidden">
+  Book a Strategy Call
 </a>
 
 <script>
 (function () {
   'use strict';
 
+  /* ============================================================
+     META PIXEL — event helpers
+     - All events are wrapped so a blocked pixel can never break the page.
+     - Duplicate protection uses sessionStorage so refreshes don't double-count.
+     - No personal data (name, email, phone, message) is ever sent.
+     ============================================================ */
+  var TEST_MODE = /[?&]r0yce_test=1/.test(window.location.search);
+
+  function track(eventName, params) {
+    try {
+      if (typeof window.fbq !== 'function') return;
+      window.fbq('track', eventName, params || {});
+      if (TEST_MODE) console.log('[Meta Pixel] event fired:', eventName, params || {});
+    } catch (e) {
+      if (TEST_MODE) console.warn('[Meta Pixel] could not fire', eventName, e);
+    }
+  }
+
+  function once(key, fn) {
+    try {
+      if (sessionStorage.getItem(key)) return false;
+      sessionStorage.setItem(key, '1');
+    } catch (e) { /* storage blocked: still fire once per call */ }
+    fn();
+    return true;
+  }
+
+  /* ViewContent — landing page viewed once per session */
+  once('r0yce_vc', function () {
+    track('ViewContent', { content_name: 'R0YCE landing page', content_category: 'agency_services' });
+  });
+
+  /* ViewContent — service sections viewed once per session each */
+  var serviceMap = {
+    services: 'Paid ads and AI UGC services',
+    pricing: 'Pricing and engagements',
+    book: 'Booking form'
+  };
+  if ('IntersectionObserver' in window) {
+    var vo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var key = entry.target.id;
+        var label = serviceMap[key];
+        if (!label) return;
+        once('r0yce_vc_' + key, function () {
+          track('ViewContent', { content_name: label, content_category: 'agency_services' });
+        });
+        vo.unobserve(entry.target);
+      });
+    }, { threshold: 0.45 });
+    Object.keys(serviceMap).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) vo.observe(el);
+    });
+  }
+
   /* ---------- year ---------- */
-  document.getElementById('year').textContent = new Date().getFullYear();
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* ---------- mobile menu ---------- */
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+  var menuBtn = document.getElementById('menuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', function () {
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { mobileMenu.classList.add('hidden'); });
+    });
+  }
 
-  /* ---------- nav shrink on scroll ---------- */
-  const navInner = document.getElementById('navInner');
-  const stickyCta = document.getElementById('stickyCta');
-  const onScroll = () => {
-    const y = window.scrollY;
-    navInner.classList.toggle('bg-ink-900/90', y > 40);
-    navInner.classList.toggle('shadow-card', y > 40);
-    navInner.classList.toggle('py-2', y > 40);
-    stickyCta.classList.toggle('translate-y-24', y < 600);
+  /* ---------- sticky mobile CTA ---------- */
+  var stickyCta = document.getElementById('stickyCta');
+  var onScroll = function () {
+    if (!stickyCta) return;
+    stickyCta.classList.toggle('translate-y-24', window.scrollY < 600);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---------- scroll reveal ---------- */
-  const revealEls = document.querySelectorAll('.reveal');
+  /* ---------- quiet scroll reveal ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          const el = entry.target;
-          setTimeout(() => el.classList.add('in'), Math.min(i * 70, 280));
-          io.unobserve(el);
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(el => io.observe(el));
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
   } else {
-    revealEls.forEach(el => el.classList.add('in'));
+    revealEls.forEach(function (el) { el.classList.add('in'); });
   }
 
-  /* ---------- animated counters ---------- */
-  const easeOut = t => 1 - Math.pow(1 - t, 3);
-  const runCounter = (el) => {
-    const to = parseFloat(el.dataset.to);
-    const decimals = parseInt(el.dataset.decimals || '0', 10);
-    const suffix = el.dataset.suffix || '';
-    const duration = 1600;
-    const start = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - start) / duration, 1);
-      const val = to * easeOut(p);
-      el.textContent = val.toFixed(decimals) + suffix;
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  };
-  const counters = document.querySelectorAll('.counter');
-  if ('IntersectionObserver' in window) {
-    const co = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { runCounter(e.target); co.unobserve(e.target); }
-      });
-    }, { threshold: 0.5 });
-    counters.forEach(c => co.observe(c));
-  } else {
-    counters.forEach(runCounter);
-  }
-
-  /* ---------- chart line draw-in ---------- */
-  const line = document.getElementById('chartLine');
-  if (line) {
-    const len = line.getTotalLength ? line.getTotalLength() : 0;
-    if (len) {
-      line.style.strokeDasharray = len;
-      line.style.strokeDashoffset = len;
-      line.style.transition = 'stroke-dashoffset 2s cubic-bezier(.2,.8,.2,1)';
-      setTimeout(() => { line.style.strokeDashoffset = 0; }, 500);
+  /* ---------- hero clips: silent loop preview ---------- */
+  document.querySelectorAll('.js-reel').forEach(function (video) {
+    if ('IntersectionObserver' in window) {
+      var hvo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { video.play().catch(function () {}); hvo.unobserve(video); }
+        });
+      }, { threshold: 0.3 });
+      hvo.observe(video);
     }
-  }
+  });
 
-  /* ---------- creative showcase: click to play, hover previews ---------- */
-  document.querySelectorAll('.js-reel').forEach((video) => {
-    const shell = video.closest('figure');
-    const playBtn = shell.querySelector('.js-play');
-
-    const togglePlay = (e) => {
-      if (e) e.stopPropagation();
+  /* ---------- work section: click to play with sound ---------- */
+  document.querySelectorAll('.js-play').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var figure = btn.closest('figure');
+      var video = figure ? figure.querySelector('.js-reel') : null;
+      if (!video) return;
       if (video.paused) {
-        document.querySelectorAll('.js-reel').forEach((other) => {
+        document.querySelectorAll('.js-reel').forEach(function (other) {
           if (other !== video) {
             other.pause();
             other.muted = true;
-            const otherBtn = other.closest('figure').querySelector('.js-play');
-            if (otherBtn) otherBtn.style.opacity = '1';
+            var ob = other.closest('figure').querySelector('.js-play');
+            if (ob) ob.style.display = '';
           }
         });
         video.muted = false;
-        video.play()
-          .then(() => { if (playBtn) playBtn.style.opacity = '0'; })
-          .catch(() => { if (playBtn) playBtn.style.opacity = '1'; });
+        video.play().then(function () { btn.style.display = 'none'; }).catch(function () {});
       } else {
         video.pause();
-        if (playBtn) playBtn.style.opacity = '1';
+        btn.style.display = '';
       }
-    };
-
-    video.addEventListener('click', togglePlay);
-    if (playBtn) playBtn.addEventListener('click', togglePlay);
-
-    // silent autoplay preview once the card is on screen
-    if ('IntersectionObserver' in window) {
-      const vo = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            video.play().catch(() => {});
-            vo.unobserve(video);
-          }
-        });
-      }, { threshold: 0.4 });
-      vo.observe(video);
-    }
-
-    // tap the shell to play the first clip in the hero card too
-    shell.addEventListener('mouseenter', () => {
-      if (video.paused) video.play().catch(() => {});
     });
   });
 
-  /* ---------- FAQ: only one open at a time ---------- */
-  const faqs = document.querySelectorAll('#faq details');
-  faqs.forEach(d => d.addEventListener('toggle', () => {
-    if (d.open) faqs.forEach(o => { if (o !== d) o.open = false; });
-  }));
+  /* ---------- FAQ: one open at a time ---------- */
+  var faqs = document.querySelectorAll('#faq details');
+  faqs.forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (d.open) faqs.forEach(function (o) { if (o !== d) o.open = false; });
+    });
+  });
 
-  /* ---------- smooth anchor scroll with nav offset ---------- */
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (e) => {
-      const id = a.getAttribute('href');
-      if (id === '#' || id.length < 2) return;
-      const target = document.querySelector(id);
+  /* ---------- anchor scrolling with sticky-nav offset ---------- */
+  var navH = 72;
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      if (!id || id.length < 2) return;
+      var target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      const top = target.getBoundingClientRect().top + window.scrollY - 96;
-      window.scrollTo({ top, behavior: 'smooth' });
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - navH, behavior: 'smooth' });
     });
   });
 
   /* ---------- booking form ---------- */
-  const form = document.getElementById('bookingForm');
-  const formError = document.getElementById('formError');
-  const formSuccess = document.getElementById('formSuccess');
-  const submitBtn = document.getElementById('submitBtn');
-  const btnLabel = document.getElementById('btnLabel');
-  const resetBtn = document.getElementById('resetForm');
+  var form = document.getElementById('bookingForm');
+  var formError = document.getElementById('formError');
+  var formSuccess = document.getElementById('formSuccess');
+  var submitBtn = document.getElementById('submitBtn');
+  var btnLabel = document.getElementById('btnLabel');
+  var resetBtn = document.getElementById('resetForm');
 
-  const showError = (msg) => {
+  function showError(msg) {
     formError.textContent = msg;
     formError.classList.remove('hidden');
-  };
+  }
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    formError.classList.add('hidden');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      formError.classList.add('hidden');
 
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+      var name = form.name.value.trim();
+      var email = form.email.value.trim();
+      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
 
-    if (!name) return showError('Please add your name so we know who to reply to.');
-    if (!emailOk) return showError('That email address doesn\u2019t look right \u2014 mind checking it?');
+      if (!name) { showError('Please add your name so we know who to reply to.'); return; }
+      if (!emailOk) { showError('That email address doesn\u2019t look right \u2014 mind checking it?'); return; }
 
-    submitBtn.disabled = true;
-    btnLabel.textContent = 'Sending…';
+      submitBtn.disabled = true;
+      btnLabel.textContent = 'Sending…';
 
-    const formData = new FormData(form);
-    formData.append('_subject', 'New strategy call request from ' + form.name.value.trim() + (form.company.value.trim() ? ' (' + form.company.value.trim() + ')' : ''));
-    formData.append('_template', 'table');
-    formData.append('_captcha', 'false');
+      var formData = new FormData(form);
+      formData.append('_subject', 'New strategy call request from ' + name + (form.company.value.trim() ? ' (' + form.company.value.trim() + ')' : ''));
+      formData.append('_template', 'table');
+      formData.append('_captcha', 'false');
 
-    fetch('https://formsubmit.co/ajax/roycemarketing72@gmail.com', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: formData
-    })
-    .then(response => {
-      if (!response.ok) throw new Error('Send failed');
-      return response.json();
-    })
-    .then(() => {
-      form.classList.add('hidden');
-      formSuccess.classList.remove('hidden');
-      formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    })
-    .catch(() => {
-      /* network/endpoint failure: don't fake success, give them a real fallback */
+      fetch('https://formsubmit.co/ajax/roycemarketing72@gmail.com', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      })
+      .then(function (response) {
+        if (!response.ok) throw new Error('Send failed');
+        return response.json();
+      })
+      .then(function () {
+        /* Lead fires ONLY after the form has been accepted. Once per session. */
+        once('r0yce_lead', function () {
+          track('Lead', { content_name: 'Strategy call request', content_category: 'inquiry_form' });
+        });
+        form.classList.add('hidden');
+        formSuccess.classList.remove('hidden');
+        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      })
+      .catch(function () {
+        submitBtn.disabled = false;
+        btnLabel.textContent = 'Request my strategy call';
+        showError('We couldn\u2019t send that automatically. Please message us on WhatsApp (0904 243 6206) or email roycemarketing72@gmail.com and we\u2019ll reply straight away.');
+      });
+    });
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function () {
+      form.reset();
+      form.classList.remove('hidden');
+      formSuccess.classList.add('hidden');
       submitBtn.disabled = false;
       btnLabel.textContent = 'Request my strategy call';
-      showError('We couldn\u2019t send that automatically. Please message us on WhatsApp (0904 243 6206) or email roycemarketing72@gmail.com and we\u2019ll reply straight away.');
     });
-  });
+  }
 
-  resetBtn.addEventListener('click', () => {
-    form.reset();
-    form.classList.remove('hidden');
-    formSuccess.classList.add('hidden');
-    submitBtn.disabled = false;
-    btnLabel.textContent = 'Request my strategy call';
-  });
+  /* ============================================================
+     Schedule event helper — DO NOT call this from the form.
+     There is no real booking confirmation on this page yet, so
+     firing it here would count inquiries as booked calls.
+     Once a booking tool (Calendly / Cal.com) is wired in, call:
+        window.r0yceTrackSchedule(<confirmed booking reference>)
+     from the tool's "booking confirmed" callback only.
+     ============================================================ */
+  window.r0yceTrackSchedule = function (bookingRef) {
+    if (!bookingRef) {
+      if (TEST_MODE) console.warn('[Meta Pixel] Schedule not fired: no confirmed booking reference.');
+      return;
+    }
+    var key = 'r0yce_sched_' + bookingRef;
+    try { if (sessionStorage.getItem(key)) return; } catch (e) {}
+    try { sessionStorage.setItem(key, '1'); } catch (e) {}
+    track('Schedule', { content_name: 'Strategy call booked' });
+  };
 
+  if (TEST_MODE) {
+    console.log('%c[R0YCE test mode] Meta Pixel active. PageView fired on load. Scroll to Services / Pricing / Booking to see ViewContent. Submit the form to see Lead.', 'color:#3d5f7c;font-weight:bold');
+  }
 })();
 </script>
 </body>
