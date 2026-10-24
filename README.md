@@ -9,7 +9,7 @@ No framework, no build step — plain HTML, Tailwind via CDN, and inline CSS/JS.
 
 | Path | Purpose |
 |---|---|
-| `index.html` | Homepage: hero, services, results, process, work, pricing, booking form, FAQ. |
+| `index.html` | Homepage: hero, services, results, process, work, work-with-us, booking form, FAQ. |
 | `privacy.html` | Privacy Policy. |
 | `terms.html` | Terms & Conditions. |
 | `404.html` | Not-found page (used automatically by Vercel / GitHub Pages). |
@@ -17,7 +17,7 @@ No framework, no build step — plain HTML, Tailwind via CDN, and inline CSS/JS.
 | `sitemap.xml` | Sitemap for the production domain. |
 | `googleeb9200bab7701618.html` | Google Search Console verification file. **Do not rename or edit.** |
 | `googleba69ea99c10b37f8.html` | Second Google Search Console verification file. **Do not rename or edit.** |
-| `assets/` | Photography, sample video clips and the TikTok analytics screenshot. |
+| `assets/` | Brand logo (`royce-logo.png`, `royce-logo-sm.png`, `royce-icon.png`), photography, sample video clips and the TikTok analytics screenshot. |
 
 ## Design system
 
@@ -27,6 +27,10 @@ No framework, no build step — plain HTML, Tailwind via CDN, and inline CSS/JS.
 - Charcoal `#23302B` — body text
 - Warm grey `#E4DDCE` — borders and quiet surfaces
 - Headings: Fraunces (editorial serif) · Body: Inter
+- Logo: gold Royce "R" mark (transparent PNG derived from the supplied artwork)
+
+There is **no published pricing**. The site uses a “Work With Us” section and asks for a call so
+scope and fee are agreed in writing — do not add price cards without the owner confirming figures.
 
 ## Deploying
 
