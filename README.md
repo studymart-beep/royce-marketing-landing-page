@@ -1,37 +1,90 @@
-# R0YCE Marketing — landing page
+# R0YCE Marketing — website
 
-Static landing page for R0YCE Marketing: paid media (Meta Ads, TikTok Ads, YouTube Ads) and AI UGC creative.
+Static marketing site for **R0YCE Marketing**: Meta Ads management, TikTok Ads management,
+advertising creative production, landing pages and campaign optimisation.
+
+No framework, no build step — plain HTML, Tailwind via CDN, and inline CSS/JS.
 
 ## Files
 
 | Path | Purpose |
 |---|---|
-| `index.html` | The entire landing page — HTML + Tailwind (CDN) + inline CSS/JS. No build step. |
-| `assets/` | Videos and images used on the page. |
-| `googleeb9200bab7701618.html` | Google Search Console site-verification file. **Do not rename, edit or delete** — Search Console checks it at the site root. |
-| `robots.txt` | Crawler rules; points to the sitemap. |
-| `sitemap.xml` | Single-URL sitemap for search engines. |
-| `404.html` | Not-found page, used automatically by GitHub Pages / Netlify. |
+| `index.html` | Homepage: hero, services, results, process, work, pricing, booking form, FAQ. |
+| `privacy.html` | Privacy Policy. |
+| `terms.html` | Terms & Conditions. |
+| `404.html` | Not-found page (used automatically by Vercel / GitHub Pages). |
+| `robots.txt` | Crawler rules, points to the sitemap. |
+| `sitemap.xml` | Sitemap for the production domain. |
+| `googleeb9200bab7701618.html` | Google Search Console verification file. **Do not rename or edit.** |
+| `googleba69ea99c10b37f8.html` | Second Google Search Console verification file. **Do not rename or edit.** |
+| `assets/` | Photography, sample video clips and the TikTok analytics screenshot. |
+
+## Design system
+
+- Ivory `#F7F3E9` — page background (dominant)
+- Orange `#F36B21` — primary buttons, links, accents
+- Deep forest `#0D3B2E` — headings, results section, footer
+- Charcoal `#23302B` — body text
+- Warm grey `#E4DDCE` — borders and quiet surfaces
+- Headings: Fraunces (editorial serif) · Body: Inter
 
 ## Deploying
 
-The site is plain static files — deploy the repository root as-is:
+Deploy the repository root as-is. No build command, no output directory.
 
-- **GitHub Pages:** Settings → Pages → Source: `Deploy from a branch` → `main` / `/ (root)`.
-- **Netlify / Vercel:** connect the repo, no build command, publish directory `.` (root).
+- **Vercel:** already connected — production URL `https://royce-marketing-landing-page.vercel.app/`
+- **GitHub Pages:** Settings → Pages → `main` / `/ (root)`
 
-## After the domain is live
+## Tracking
 
-1. **Search Console:** return to the verification screen and press *Verify*. If HTML-file verification fails, the file is not at `https://royce-marketing-landing-page.vercel.app/googleeb9200bab7701618.html` — check it was not renamed and sits in the publish root.
-2. **Sitemap:** Search Console → Sitemaps → submit `sitemap.xml`. Already set to https://royce-marketing-landing-page.vercel.app/.
-3. **Meta Pixel:** verify events in Events Manager → Test Events (append `?r0yce_test=1` to the URL for console logs).
-4. **Booking form:** FormSubmit requires one-time activation of `roycemarketing72@gmail.com` from the live domain.
+### Meta Pixel — `2156638741957885`
 
-## Meta Pixel events
+| Event | When | Notes |
+|---|---|---|
+| `PageView` | Every page load | From the pixel base code. |
+| `ViewContent` | Landing page viewed | Once per session. No `value` sent. |
+| `Contact` | First click on a WhatsApp or email link | Once per session. |
+| `Lead` | Only after the form has been accepted by FormSubmit | Once per session. No `value` sent. |
+| `Schedule` | **Not fired** | Reserved for a real booking confirmation via `window.r0yceTrackSchedule(bookingRef)`. |
 
-| Event | When |
-|---|---|
-| `PageView` | On every page load (pixel base code). |
-| `ViewContent` | Landing page, Services, Pricing and Booking sections — once per session each. |
-| `Lead` | Only after the booking form is accepted by FormSubmit. Once per session. |
-| `Schedule` | **Not fired.** Reserved for a real booking confirmation via `window.r0yceTrackSchedule(bookingRef)`. |
+No personal data (name, email, phone, message) is ever passed to the pixel.
+`view_item` is deliberately **not** used — it is a commerce event, not a standard service-view event.
+
+**Testing:** append `?r0yce_test=1` to the URL for console logs, then watch
+Meta Events Manager → Test Events.
+
+### TikTok Pixel
+
+Not configured yet. There is no TikTok Pixel ID in the project. To switch it on, set the ID once
+in `index.html`:
+
+```js
+window.TIKTOK_PIXEL_ID = 'TIKTOK_PIXEL_ID';  // ← replace with the real ID
+```
+
+The loader and events (`ViewContent`, `Contact`, `SubmitForm`, `Schedule`) activate automatically
+once the ID is set. Until then no TikTok request is made.
+
+## Booking form
+
+Posts to **FormSubmit** (`roycemarketing72@gmail.com`). One-time setup after any domain change:
+submit the form on the live site, then click the activation link in that inbox (check Spam).
+
+## SEO
+
+- Canonical, Open Graph and Twitter tags point to the production URL.
+- `robots.txt` and `sitemap.xml` reference the production URL.
+- Both Google verification files must stay at the repository root.
+- After a domain change, update: `<link rel="canonical">`, the OG/Twitter URLs, `sitemap.xml`
+  and the `Sitemap:` line in `robots.txt`.
+
+## Photography credits
+
+All photographs are licensed stock from Wikimedia Commons:
+
+- `assets/workspace-desk.jpg` — “Laptop and coffee on a desk”, Lauren Mancke, CC0.
+- `assets/planning-desk.jpg` — “Person writing in notebook while using laptop at a modern workspace”, Shixart1985, CC BY 2.0.
+- `assets/content-production.jpg` — “1E1A0124”, CC BY-SA 4.0.
+- `assets/laptop-workspace.jpg` — “Coffee-desk-laptop-notebook”, CC0.
+
+Keep the attribution if you republish these images.

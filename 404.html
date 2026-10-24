@@ -7,48 +7,50 @@
 <title>Page not found — R0YCE Marketing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
     theme: {
       extend: {
-        fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] },
+        fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'], display: ['Fraunces', 'Georgia', 'serif'] },
         colors: {
-          paper: '#ffffff', mist: '#f6f7f9', line: '#e5e7eb',
-          ink: { 900: '#111418', 800: '#1f2429', 700: '#384049', 600: '#5b6470', 500: '#7c8591', 400: '#9aa2ac' },
-          accent: { 500: '#3d5f7c', 600: '#2e4a62' },
+          ivory: { DEFAULT: '#F7F3E9', deep: '#F0EADC', card: '#FFFDF7' },
+          orange: { DEFAULT: '#F36B21', dark: '#D9550F' },
+          forest: { DEFAULT: '#0D3B2E', dark: '#082B21' },
+          charcoal: '#23302B',
+          warmgrey: { DEFAULT: '#E4DDCE' },
         },
       },
     },
   };
 </script>
 </head>
-<body class="bg-paper font-sans text-ink-700 antialiased">
+<body class="bg-ivory font-sans text-charcoal antialiased">
   <main class="mx-auto flex min-h-screen max-w-xl flex-col justify-center px-5 py-16">
     <a href="/" class="flex items-center gap-2.5">
-      <span class="grid h-9 w-9 place-items-center rounded-lg bg-ink-900 text-[15px] font-bold text-white">R</span>
-      <span class="text-[17px] font-bold tracking-tight text-ink-900">R0YCE<span class="text-accent-500">.</span></span>
+      <span class="grid h-9 w-9 place-items-center rounded-lg bg-forest font-display text-[17px] font-bold text-ivory">R</span>
+      <span class="text-[17px] font-bold tracking-tight text-forest">R0YCE<span class="text-orange">.</span></span>
     </a>
 
-    <p class="mt-10 text-xs font-semibold uppercase tracking-wider text-accent-600">404</p>
-    <h1 class="mt-3 text-2xl font-bold tracking-tight text-ink-900 sm:text-3xl">That page doesn't exist.</h1>
-    <p class="mt-3 text-[16px] leading-relaxed text-ink-600">
+    <p class="mt-10 text-xs font-semibold uppercase tracking-wider text-orange">404</p>
+    <h1 class="mt-3 font-display text-2xl font-semibold tracking-tight text-forest sm:text-3xl">That page doesn't exist.</h1>
+    <p class="mt-3 text-[16px] leading-relaxed text-charcoal/80">
       The link may be out of date. Everything about our paid ads, AI UGC and pricing lives on the home page.
     </p>
 
     <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-      <a href="/" class="inline-flex items-center justify-center rounded-lg bg-ink-900 px-6 py-3.5 text-[15px] font-semibold text-white transition hover:bg-ink-800">
+      <a href="/" class="inline-flex items-center justify-center rounded-lg bg-orange px-6 py-3.5 text-[15px] font-semibold text-white transition hover:bg-orange-dark">
         Back to home
       </a>
-      <a href="/#book" class="inline-flex items-center justify-center rounded-lg border border-line px-6 py-3.5 text-[15px] font-semibold text-ink-800 transition hover:border-ink-400">
+      <a href="/#book" class="inline-flex items-center justify-center rounded-lg border border-warmgrey px-6 py-3.5 text-[15px] font-semibold text-forest transition hover:border-forest">
         Book a Strategy Call
       </a>
     </div>
 
-    <p class="mt-8 text-sm text-ink-500">
+    <p class="mt-8 text-sm text-charcoal/60">
       Need a hand?
-      <a href="mailto:roycemarketing72@gmail.com" class="font-semibold text-accent-600 hover:underline">roycemarketing72@gmail.com</a>
+      <a href="mailto:roycemarketing72@gmail.com" class="font-semibold text-orange hover:underline">roycemarketing72@gmail.com</a>
     </p>
   </main>
 </body>
