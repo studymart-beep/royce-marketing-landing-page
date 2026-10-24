@@ -951,6 +951,25 @@ src="https://www.facebook.com/tr?id=2156638741957885&ev=PageView&noscript=1"
     return true;
   }
 
+  /* ============================================================
+     STANDARD COMMERCE EVENT
+     `view_item` is the event Meta's system treats as a product /
+     service interest signal. It is a standard event (not custom),
+     so it shows up in Events Manager with the correct category and
+     can be used for retargeting audiences and Advantage+ optimisation.
+     Declared once, before PageView, so it registers correctly.
+     ============================================================ */
+  once('r0yce_view_item', function () {
+    track('view_item', {
+      content_type: 'product',
+      content_ids: ['royce_full_growth'],
+      content_name: 'Paid media and AI UGC growth services',
+      content_category: 'marketing_agency',
+      value: 5900,
+      currency: 'USD'
+    });
+  });
+
   /* ViewContent — landing page viewed once per session */
   once('r0yce_vc', function () {
     track('ViewContent', { content_name: 'R0YCE landing page', content_category: 'agency_services' });
@@ -1122,9 +1141,22 @@ src="https://www.facebook.com/tr?id=2156638741957885&ev=PageView&noscript=1"
         return response.json();
       })
       .then(function () {
-        /* Lead fires ONLY after the form has been accepted. Once per session. */
+        /* Lead fires ONLY after the form has been accepted. Once per session.
+           value/currency make it a complete lead event so Meta can report on
+           cost per lead and optimise ad delivery toward real enquiries. */
         once('r0yce_lead', function () {
-          track('Lead', { content_name: 'Strategy call request', content_category: 'inquiry_form' });
+          track('Lead', {
+            content_name: 'Strategy call request',
+            content_category: 'inquiry_form',
+            value: 5900,
+            currency: 'USD'
+          });
+        });
+
+        /* Contact — standard Meta event marking a direct contact action.
+           Fires on the same verified submit, once per session. */
+        once('r0yce_contact', function () {
+          track('Contact', { content_name: 'Booking form submitted' });
         });
         form.classList.add('hidden');
         formSuccess.classList.remove('hidden');
