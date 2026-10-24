@@ -4,4 +4,4 @@ Allow: /
 # Google Search Console verification file must stay crawlable
 Allow: /googleeb9200bab7701618.html
 
-Sitemap: https://roycemarketing.com/sitemap.xml
+Sitemap: https://royce-marketing-landing-page.vercel.app/sitemap.xml
